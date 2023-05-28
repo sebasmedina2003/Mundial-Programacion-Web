@@ -47,6 +47,7 @@ body{
     padding-top: 0.5rem;
     text-align: center;
     color: #fff;
+
     
 }
 
@@ -72,7 +73,32 @@ body{
 .margin-0{
     margin: 0;
 }
+
 .flex{
     display: grid;
-    grid-template-rows: repeat(2);
+    grid-template-columns: repeat(10, 12rem);
+
+}
+.Contenedor-botones{
+    display: flex;
+    background-image: url('../img/fondoGradiente.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%; /*Para que podamos aprovechar todo el header*/
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    text-align: center;
+    color: #fff;
+}
+
+.btn{
+    background-color: #cd0c36;
+    font-family: 'Fredoka', sans-serif;
+    border-radius: 1rem;
+    color: #fff;
+    width: 20rem;
+    height: 10rem;
+    font-size: 2.5rem;
+    margin: 4rem 0rem 0rem 4rem;
 }
