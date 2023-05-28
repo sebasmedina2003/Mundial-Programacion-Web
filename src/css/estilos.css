@@ -59,6 +59,11 @@ body{
     border: none;
     
 }
+
+.img-contenedor:hover{
+    cursor: pointer;
+}
+
 .img-contenedor img {
     width: 100%;
     height: 100%;
