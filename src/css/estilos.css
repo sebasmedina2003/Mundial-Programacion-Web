@@ -105,3 +105,228 @@ div.margin-1 .img-contenedor {
 .btn:hover{
     cursor: pointer;
 }
+
+.llaves{
+    background-image: url('../img/llaves.jpg');
+    background-size: 1500px 600px;
+    height: 100vh; /*view por heigth*/
+    min-height: 8rem;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-left: 1rem;
+    position: relative;
+}
+
+.btn-elegir-diferentes{
+    background-color: #cd0c36;
+    font-family: 'Fredoka', sans-serif;
+    border-radius: 1rem;
+    color: #fff;
+    width: 17rem;
+    height: 10rem;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 6rem;
+    left: 80rem;
+}
+.btn-volver-simulación{
+    background-color: #cd0c36;
+    font-family: 'Fredoka', sans-serif;
+    border-radius: 1rem;
+    color: #fff;
+    width: 17rem;
+    height: 10rem;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 6rem;
+    left: 55rem;
+}
+
+.btn-elegir-diferentes{
+    cursor: pointer;
+}
+.btn-volver-simulación{
+    cursor: pointer;
+}
+
+.país-circular-llave{
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: none;
+}
+/* ------------------------------------------------------------ Octavos de final equipos ---------------------------------------------------------------------------------------- */
+.octavos-pos-1{
+    position: absolute;
+    left: 2rem;
+    top: 2.5rem;
+}
+.octavos-pos-2{
+    position: absolute;
+    left: 12.2rem;
+    top: 2.5rem;
+}
+.octavos-pos-3{
+    position: absolute;
+    left: 2rem;
+    top: 18.2rem;
+}
+.octavos-pos-4{
+    position: absolute;
+    left: 12.2rem;
+    top: 18.2rem;
+}
+.octavos-pos-5{
+    position: absolute;
+    left: 2rem;
+    top: 34rem;
+}
+.octavos-pos-6{
+    position: absolute;
+    left: 12.2rem;
+    top: 34rem;
+}
+.octavos-pos-7{
+    position: absolute;
+    left: 2rem;
+    top: 50.1rem;
+}
+.octavos-pos-8{
+    position: absolute;
+    left: 12.2rem;
+    top: 50.1rem;
+}
+.octavos-pos-9{
+    position: absolute;
+    left: 131.5rem;
+    top: 2.5rem;
+}
+.octavos-pos-10{
+    position: absolute;
+    left: 141.5rem;
+    top: 2.5rem;
+}
+.octavos-pos-11{
+    position: absolute;
+    left: 131.5rem;
+    top: 17rem;
+}
+.octavos-pos-12{
+    position: absolute;
+    left: 141.5rem;
+    top: 17rem;
+}
+.octavos-pos-13{
+    position: absolute;
+    left: 131.5rem;
+    top: 34.5rem;
+}
+.octavos-pos-14{
+    position: absolute;
+    left: 141.5rem;
+    top: 34.5rem;
+}
+.octavos-pos-15{
+    position: absolute;
+    left: 131.5rem;
+    top: 50.5rem;
+}
+.octavos-pos-16{
+    position: absolute;
+    left: 141.5rem;
+    top: 50.5rem;
+}
+/* ------------------------------------------------------------ Cuartos de final equipos ---------------------------------------------------------------------------------------- */
+.cuartos-pos-1{
+    position: absolute;
+    left: 23.5rem;
+    top: 11rem;
+
+}
+.cuartos-pos-2{
+    position: absolute;
+    left: 33.5rem;
+    top: 11rem;
+    
+}
+.cuartos-pos-3{
+    position: absolute;
+    left: 23.5rem;
+    top: 42.5rem;
+    
+}
+.cuartos-pos-4{
+    position: absolute;
+    left: 33.5rem;
+    top: 42.5rem;
+}
+.cuartos-pos-5{
+    position: absolute;
+    left: 110rem;
+    top: 11rem;
+}
+.cuartos-pos-6{
+    position: absolute;
+    left: 120.5rem;
+    top: 11rem;
+}
+.cuartos-pos-7{
+    position: absolute;
+    left: 110rem;
+    top: 43.5rem;
+    
+}
+.cuartos-pos-8{
+    position: absolute;
+    left: 120.5rem;;
+    top: 43.5rem;
+}
+
+/* ------------------------------------------------------------------------- Semifinales equipos ---------------------------------------------------------------------------------------- */
+.semis-pos-1{
+    position: absolute;
+    left: 45rem;
+    top: 23.5rem;
+
+}
+.semis-pos-2{
+    position: absolute;
+    left: 56rem;
+    top: 23.5rem;
+}
+.semis-pos-3{
+    position: absolute;
+    left: 87rem;
+    top: 23.5rem;
+}
+.semis-pos-4{
+    position: absolute;
+    left: 98.3rem;
+    top: 23.5rem;
+    
+}
+
+.tercer-puesto-pos-1{
+    position: absolute;
+    left: 67rem;
+    top: 43rem;
+}
+.tercer-puesto-pos-2{
+    position: absolute;
+    left: 77.5rem;
+    top: 43rem;
+}
+/* ------------------------------------------------------------------------- Final equipos ---------------------------------------------------------------------------------------- */
+
+.final-pos-1{
+    position: absolute;
+    left: 67rem;
+    top: 23.5rem;
+}
+.final-pos-2{
+    position: absolute;  
+    left: 77rem;
+    top: 23.5rem;
+
+}

@@ -1,4 +1,4 @@
-// Le agregamos el evento de cargado a la ventana y ejevutamos la funcion main cuando termine
+// Le agregamos el evento de cargado a la ventana y ejecutamos la funcion main cuando termine
 window.addEventListener("load", main)
 
 // Creamos de variable global que contiene el nombre de las banderas seleccionadas
