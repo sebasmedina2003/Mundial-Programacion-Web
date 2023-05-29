@@ -4,5 +4,5 @@
 
 <ul>
    <li>Sebastian Medina @sebasmedina2003</li>
-   <li>Manuel Cueto @</li>
+   <li>Manuel Cueto @manucueto</li>
 <ul>
