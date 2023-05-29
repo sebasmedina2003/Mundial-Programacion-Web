@@ -13,6 +13,10 @@ function main(event){
     botonesPaises.forEach(element => {
         element.addEventListener("click", botonSeleccionado);
     });
+
+    // Recolectamos el boton de iniciar simulacion
+    var btnIniciar = document.getElementById("btnIniciar");
+    btnIniciar.addEventListener("click", iniciar)
 }
 
 // Funcion al seleccionar los botones de la clase .img-contenedor
@@ -22,7 +26,7 @@ function botonSeleccionado(){
 
     // Si tiene el estilo de borde de seleccion se lo quitamos y lo eliminamos de la lista sino lo agregamos a la lista y le ponemos el estilo
     if (btnSeleccionado.style.border === "3px solid red"){
-        btnSeleccionado.style.border = "none";
+        btnSeleccionado.style.border = "0px solid red";
         listaSeleccionados.splice(listaSeleccionados.indexOf(btnSeleccionado.value), 1);
 
     } else if (btnSeleccionado.style.border !== "3px solid red" && listaSeleccionados.length <= 15) {
@@ -32,5 +36,13 @@ function botonSeleccionado(){
 
     } else {
         alert("A excedido el numero de equipos seleccionados");
+    }
+}
+
+function iniciar(event){
+    if(listaSeleccionados.length === 16){
+        // Logica de cuando deba iniciar la simulacion
+    } else {
+        alert("No ha seleccionado los 16 equipos de octavos")
     }
 }
