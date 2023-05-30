@@ -289,7 +289,6 @@ div.margin-1 .img-contenedor {
     position: absolute;
     left: 45rem;
     top: 23.5rem;
-
 }
 .semis-pos-2{
     position: absolute;
@@ -508,3 +507,191 @@ div.margin-1 .img-contenedor {
     top: calc(23.5rem + 3.3rem);
 }
 
+/* --------------------------------------------------------------- Resultados de los partidos(octavos de final) ---------------------------------------------------------------------------------------- */
+.pGrande{
+    font-size: 2.5rem;
+}
+.pChica{
+    font-size: 1.5rem;
+}
+
+.resultado-8-1_2{
+    position: absolute;
+    left: calc(2rem + 5.8rem);
+    top: calc(2.5rem - 0.9rem);
+}
+.resultado-8-3_4{
+    position: absolute;
+    left: calc(2rem + 5.8rem);
+    top: calc(18.2rem - 0.9rem);
+}
+.resultado-8-5_6{
+    position: absolute;
+    left: calc(2rem + 5.8rem);
+    top: calc(34rem - 0.9rem);
+}
+.resultado-8-7_8{
+    position: absolute;
+    left: calc(2rem + 5.8rem);
+    top: calc(50.1rem - 0.9rem);
+}
+.resultado-8-9_10{
+    position: absolute;
+    left: calc(131.5rem + 5.8rem);
+    top: calc(2.5rem - 0.9rem);
+}
+.resultado-8-11_12{
+    position: absolute;
+    left: calc(131.5rem + 5.8rem);
+    top: calc(17rem - 0.9rem);
+}
+.resultado-8-13_14{
+    position: absolute;
+    left: calc(131.5rem + 5.8rem);
+    top: calc(34.5rem - 0.9rem);
+}
+.resultado-8-15_16{
+    position: absolute;
+    left: calc(131.5rem + 5.8rem);
+    top: calc(50.5rem - 0.9rem);
+}
+/* --------------------------------------------------------------- Penales (octavos de final) ---------------------------------------------------------------------------------------- */
+.penales-8-1_2{
+    position: absolute;
+    left: calc(2rem + 6rem);
+    top: calc(2.5rem + 3rem);
+}
+.penales-8-3_4{
+    position: absolute;
+    left: calc(2rem + 6rem);
+    top: calc(18.2rem + 3rem);
+}
+.penales-8-5_6{
+    position: absolute;
+    left: calc(2rem + 6rem);
+    top: calc(34rem + 3rem);
+}
+.penales-8-7_8{
+    position: absolute;
+    left: calc(2rem + 6rem);
+    top: calc(50.1rem + 3rem);
+}
+.penales-8-9_10{
+    position: absolute;
+    left: calc(131.5rem + 6rem);
+    top: calc(2.5rem + 3rem);
+}
+.penales-8-11_12{
+    position: absolute;
+    left: calc(131.5rem + 6rem);
+    top: calc(17rem + 3rem);
+}
+.penales-8-13_14{
+    position: absolute;
+    left: calc(131.5rem + 6rem);
+    top: calc(34.5rem + 3rem);
+}
+.penales-8-15_16{
+    position: absolute;
+    left: calc(131.5rem + 6rem);
+    top: calc(50.5rem + 3rem);
+}
+/* --------------------------------------------------------------- Resultados de los partidos(cuartos de final) ---------------------------------------------------------------------------------------- */
+.resultado-4-1_2{
+    position: absolute;
+    left: calc(23.5rem + 5.8rem);
+    top: calc(11rem - 0.9rem);
+}
+.resultado-4-3_4{
+    position: absolute;
+    left: calc(23.5rem + 5.8rem);
+    top: calc(42.5rem - 0.9rem);
+}
+.resultado-4-5_6{
+    position: absolute;
+    left: calc(110rem + 6.1rem);
+    top: calc(11rem - 0.9rem);
+}
+.resultado-4-7_8{
+    position: absolute;
+    left: calc(110rem + 6rem);
+    top: calc(43.5rem - 0.9rem);
+}
+
+/* --------------------------------------------------------------- Penales (cuartos de final) ---------------------------------------------------------------------------------------- */
+.penales-4-1_2{
+    position: absolute;
+    left: calc(23.5rem + 6rem);
+    top: calc(11rem + 3rem);
+}
+.penales-4-3_4{
+    position: absolute;
+    left: calc(23.5rem + 6rem);
+    top: calc(42.5rem + 3rem);
+}
+.penales-4-5_6{
+    position: absolute;
+    left: calc(110rem + 6.2rem);
+    top: calc(11rem + 3rem);
+}
+.penales-4-7_8{
+    position: absolute;
+    left: calc(110rem + 6.2rem);
+    top: calc(43.5rem + 3rem);
+}
+
+/* --------------------------------------------------------------- Resultados de los partidos(semifinales) ---------------------------------------------------------------------------------------- */
+.resultado-semis-1_2{
+    position: absolute;
+    left: calc(45rem + 6.4rem);
+    top: calc(23.5rem - 0.9rem);
+}
+.resultado-semis-3_4{
+    position: absolute;
+    left: calc(87rem + 6.4rem);
+    top: calc(23.5rem - 0.9rem);
+}
+
+/* --------------------------------------------------------------- Penales (semifinal) ---------------------------------------------------------------------------------------- */
+.penales-semis-1_2{
+    position: absolute;
+    left: calc(45rem + 6.6rem);
+    top: calc(23.5rem + 3rem);
+}
+.penales-semis-3_4{
+    position: absolute;
+    left: calc(87rem + 6.7rem);
+    top: calc(23.5rem + 3rem);
+}
+/* ----------------------------------------------------------- Resultado del partidos(3er puesto) ---------------------------------------------------------------------------------------- */
+.resultado-3-1_2{
+    position: absolute;
+    left: calc(67rem + 6rem);
+    top: calc(43rem - 0.9rem);
+}
+.penales-3-1_2{
+    position: absolute;
+    left: calc(67rem + 6.2rem);
+    top: calc(43rem + 3rem);
+}
+
+
+/* ----------------------------------------------------------- Resultado del partidos(final) ---------------------------------------------------------------------------------------- */
+.resultado-final-1_2{
+    position: absolute;
+    left: calc(67rem + 6rem);
+    top: calc(23.5rem - 0.9rem);
+}
+/* --------------------------------------------------------------- Penales (final) ---------------------------------------------------------------------------------------- */
+.penales-final-1_2{
+    position: absolute;
+    left: calc(67rem + 6.15rem);
+    top: calc(23.5rem + 3rem);
+}
+
+.vinotinto{
+    color: #cd0c36;
+    position: absolute;
+    left: calc(67rem + 5.2rem);
+    top: calc(23.5rem + 6rem);
+}
