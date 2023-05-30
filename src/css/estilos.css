@@ -307,6 +307,7 @@ div.margin-1 .img-contenedor {
     top: 23.5rem;
     
 }
+/* ------------------------------------------------------------------------- Tercer puesto equipos ---------------------------------------------------------------------------------------- */
 
 .tercer-puesto-pos-1{
     position: absolute;
@@ -331,3 +332,179 @@ div.margin-1 .img-contenedor {
     top: 23.5rem;
 
 }
+
+/* ------------------------------------------------------------------------- Abreviaciones de equipos(Octavos) ---------------------------------------------------------------------------------------- */
+.pos-8-1{
+    position: absolute;
+    left: calc(2.6rem);
+    top: calc(5.8rem);
+}
+.pos-8-2{
+    position: absolute;
+    left: calc(12.2rem + 0.6rem);
+    top: calc(2.5rem + 3.3rem);
+}
+.pos-8-3{
+    position: absolute;
+    left: calc(2rem + 0.6rem);
+    top: calc(18.2rem + 3.3rem);
+}
+.pos-8-4{
+    position: absolute;
+    left: calc(12.2rem + 0.6rem);
+    top: calc(18.2rem + 3.3rem);
+}
+.pos-8-5{
+    position: absolute;
+    left: calc(2rem + 0.6rem);
+    top: calc(34rem + 3.3rem);
+}
+.pos-8-6{
+    position: absolute;
+    left: calc(12.2rem + 0.6rem);
+    top: calc(34rem + 3.3rem);
+}
+.pos-8-7{
+    position: absolute;
+    left: calc(2rem + 0.6rem);
+    top: calc(50.1rem + 3.3rem);
+}
+.pos-8-8{
+    position: absolute;
+    left: calc(12.2rem + 0.6rem);
+    top: calc(50.1rem + 3.3rem);
+}
+.pos-8-9{
+    position: absolute;
+    left: calc(131.5rem + 0.6rem);
+    top: calc(2.5rem + 3.3rem);
+}
+.pos-8-10{
+    position: absolute;
+    left: calc(141.5rem + 0.6rem);
+    top: calc(2.5rem + 3.3rem);
+}
+.pos-8-11{
+    position: absolute;
+    left: calc(131.5rem + 0.6rem);
+    top: calc(17rem + 3.3rem);
+}
+.pos-8-12{
+    position: absolute;
+    left: calc(141.5rem + 0.6rem);
+    top: calc(17rem + 3.3rem);
+}
+.pos-8-13{
+    position: absolute;
+    left: calc(131.5rem + 0.6rem);
+    top: calc(34.5rem + 3.3rem);
+}
+.pos-8-14{
+    position: absolute;
+    left: calc(141.5rem + 0.6rem);
+    top: calc(34.5rem + 3.3rem);
+}
+.pos-8-15{
+    position: absolute;
+    left: calc(131.5rem + 0.6rem);
+    top: calc(50.5rem + 3.3rem);
+}
+.pos-8-16{
+    position: absolute;
+    left: calc(141.5rem + 0.6rem);
+    top: calc(50.5rem + 3.3rem);
+}
+
+/* ------------------------------------------------------------------------- Abreviaciones de equipos(Cuartos) ---------------------------------------------------------------------------------------- */
+.pos-4-1{
+    position: absolute;
+    left: calc(23.5rem + 0.6rem);
+    top: calc(11rem + 3.3rem);
+}
+.pos-4-2{
+    position: absolute;
+    left: calc(33.5rem + 0.6rem);
+    top: calc(11rem + 3.3rem);
+    
+}
+.pos-4-3{
+    position: absolute;
+    left: calc(23.5rem + 0.6rem);
+    top: calc(42.5rem + 3.3rem);
+    
+}
+.pos-4-4{
+    position: absolute;
+    left: calc(33.5rem + 0.6rem);
+    top: calc(42.5rem + 3.3rem);
+}
+.pos-4-5{
+    position: absolute;
+    left: calc(110rem + 0.6rem);
+    top: calc(11rem + 3.3rem);
+}
+.pos-4-6{
+    position: absolute;
+    left: calc(120.5rem + 0.6rem);
+    top: calc(11rem + 3.3rem);
+}
+.pos-4-7{
+    position: absolute;
+    left: calc(110rem + 0.6rem);
+    top: calc(43.5rem + 3.3rem);
+    
+}
+.pos-4-8{
+    position: absolute;
+    left: calc(120.5rem + 0.6rem);
+    top: calc(43.5rem + 3.3rem);
+}
+/* ------------------------------------------------------------------------- Abreviaciones de equipos(Semifinal) ---------------------------------------------------------------------------------------- */
+.pos-semis-1{
+    position: absolute;
+    left: calc(45rem + 0.6rem);
+    top: calc(23.5rem + 3.3rem);
+
+}
+.pos-semis-2{
+    position: absolute;
+    left: calc(56rem + 0.6rem);
+    top: calc(23.5rem + 3.3rem);
+}
+.pos-semis-3{
+    position: absolute;
+    left: calc(87rem + 0.6rem);
+    top: calc(23.5rem + 3.3rem);
+}
+.pos-semis-4{
+    position: absolute;
+    left: calc(98.3rem + 0.6rem);
+    top: calc(23.5rem + 3.3rem);
+    
+}
+/* ----------------------------------------------------------------- Abreviaciones de equipos(Tercer puesto) ---------------------------------------------------------------------------------------- */
+
+.pos-3-1{
+    position: absolute;
+    left: calc(67rem + 0.6rem);
+    top: calc(43rem + 3.3rem);
+}
+.pos-3-2{
+    position: absolute;
+    left: calc(77.5rem + 0.6rem);
+    top: calc(43rem + 3.3rem);
+}
+
+/* ------------------------------------------------------------------- Abreviaciones de equipos(FINAL) ---------------------------------------------------------------------------------------- */
+
+.pos-final-1{
+    position: absolute;
+    left: calc(67rem + 0.6rem);
+    top: calc(23.5rem + 3.3rem);
+}
+.pos-final-2{
+    position: absolute;  
+    left: calc(77rem + 0.6rem);
+    top: calc(23.5rem + 3.3rem);
+}
+
