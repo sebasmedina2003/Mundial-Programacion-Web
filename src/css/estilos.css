@@ -52,6 +52,7 @@ body{
 
 
 div.margin-1 .img-contenedor {
+    transition: 100ms;
     width: 7rem;
     height: 7rem;
     border-radius: 50%;
@@ -149,7 +150,7 @@ div.margin-1 .img-contenedor {
     cursor: pointer;
 }
 
-.país-circular-llave{
+.pais-circular-llave{
     width: 5.5rem;
     height: 5.5rem;
     border-radius: 50%;
