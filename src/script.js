@@ -379,6 +379,9 @@ function iniciar(event){
                                             finalistas.splice(finalistas.indexOf(ganador), 1);
                                             segundoLugar = finalistas[0];
 
+                                            abrirModal(ganador[0], segundoLugar[0], tercerLugar[0],)
+                                            
+
                                             console.log("El ganador es " + ganador[0]);
                                             console.log("El segundo lugar es " + segundoLugar[0]);
                                             console.log("El tercer lugar es " + tercerLugar[0]);
@@ -572,3 +575,31 @@ function descomprimirResultados(resultados){
 
     return resultadosOctavos;
 }
+
+function abrirModal(nombre_campeon, nombre_subcampeon, nombre_tercerLugar,){
+    document.querySelector(".campeon-modal").innerHTML = nombre_campeon
+    document.querySelector(".subcampeon-modal").innerHTML = nombre_subcampeon
+    document.querySelector(".tercerLugar-modal").innerHTML = nombre_tercerLugar
+
+
+    let nombre_campeon1 = nombre_campeon.toLowerCase()
+    let nombre_subcampeon1 = nombre_subcampeon.toLowerCase()
+    let nombre_tercerLugar1 = nombre_tercerLugar.toLowerCase()
+
+    document.getElementsByClassName("pais-circular-llave-campeon").src = "img/" + nombre_campeon1 + ".png"
+    document.getElementsByClassName("pais-circular-llave-subcampeon").src = "img/" + nombre_subcampeon1 + ".png"
+    document.getElementsByClassName("pais-circular-llave-tercerLugar").src = "img/" + nombre_tercerLugar1 + ".png"
+
+    let modal = document.querySelector(".modal-background")
+    modal.style.display = "flex";
+    modal.style.animation = "aparecer 1s forwards"
+
+    var close = document.getElementById("close");
+    var modal1 = document.getElementById("modal-background1");
+
+    close.addEventListener("click", function() {
+        modal1.style.display = "none";
+    });
+
+}
+

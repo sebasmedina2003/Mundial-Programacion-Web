@@ -695,3 +695,75 @@ div.margin-1 .img-contenedor {
     left: calc(67rem + 5.2rem);
     top: calc(23.5rem + 6rem);
 }
+
+.modal-background{
+    box-sizing: border-box;
+    width: 1520px;
+    height: 1199px;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+    position: absolute;
+    display: none;
+    opacity: 0;
+}
+
+.modal{
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    background-color: #d5e1ed;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+.pais-circular-llave-campeon{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: none;
+}
+.pais-circular-llave-subcampeon{
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: none;
+}
+
+.pais-circular-llave-tercerLugar{
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: none;
+}
+.amarillo{
+    color: #EFB810;
+}
+.plateado{
+    color: #9B9895;
+    -webkit-text-stroke: 0.02px black;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3rem;
+}
+.marron{
+    color: #CD7F32;
+    -webkit-text-stroke: 0.2px black;
+    font-family: 'Shadows Into Light', cursive;
+
+
+}
+.padding-2{
+    padding: 3rem;
+}
+
+@keyframes aparecer {
+    0%{
+        opacity: 0;
+        display: flex;
+    }
+    100%{
+        opacity: 1;
+        display: flex;
+    }
+}
