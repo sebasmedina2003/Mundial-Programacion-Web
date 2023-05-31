@@ -92,13 +92,33 @@ function limpiarLlave(divContenedor){
     );
 }
 
+function limpiarLlavesSimulacion(){
+    // Desmarcamos todos los botones seleccionados y limpiamos la lista
+    botonesPaises.forEach(
+        element => {
+            element.style.border = "0px solid red";
+        }
+    );
+
+    // Obtenemos los contenedores de las imagenes
+    const divOctavos = document.querySelector(".selectorOctavos");
+    const divCuartos = document.querySelector(".selectorCuartos");
+    const divSemi = document.querySelector(".selectorSemi");
+    const divFinal = document.querySelector(".selectorFinal");
+    const divSubCampeon = document.querySelector(".selector3erPuesto");
+
+    // Llamamos a la funcion que limpia las imagenes y parrafos
+    limpiarLlave(divOctavos);
+    limpiarLlave(divCuartos);
+    limpiarLlave(divSemi);
+    limpiarLlave(divFinal);
+    limpiarLlave(divSubCampeon);
+}
+
 // Funcion que inicia la simulacion
 function iniciar(event){
     // Verificamos si estan la cantidad de paises necesarios para iniciar y que no haya otra simulacion en curso
     if(listaSeleccionados.length === 16 && !simulacionIniciada){
-        // Decimos que la simulacion inicio
-        simulacionIniciada = true;
-
         // Desmarcamos todos los botones seleccionados
         botonesPaises.forEach(
             element => {
@@ -106,10 +126,15 @@ function iniciar(event){
             }
         );
 
+        limpiarLlavesSimulacion()
+
+        // Declaramos el inicio de la simulacion
+        simulacionIniciada = true;
+
         const divOctavos = document.querySelector(".selectorOctavos");
         const imgOctavos = divOctavos.querySelectorAll("img");
 
-        // Seleccionamos las parejas aleatoriamente de octavos por la funcion seleccionAleatoria
+        // Seleccionamos las parejas aleatoriamente y recursos necesarios de octavos por la funcion seleccionAleatoria
 
         const paisOct1 = seleccionAleatoria();
         imgOctavos[0].setAttribute("src", "img/" + paisOct1[0] + ".png");
@@ -117,7 +142,9 @@ function iniciar(event){
         const paisOct2 = seleccionAleatoria();
         imgOctavos[1].setAttribute("src", "img/" + paisOct2[0] + ".png");
         document.querySelector(".pos-8-2").innerHTML = paisOct2[1];
-        const marcador1 = document.getElementById("marcadorNormal1");
+        const marcadorNormal1 = document.querySelector(".resultado-8-1_2");
+        const marcadorPenal1 = document.querySelector(".penales-8-1_2");
+        marcadorNormal1.innerHTML = "0-0"
 
         const paisOct3 = seleccionAleatoria();
         imgOctavos[2].setAttribute("src", "img/" + paisOct3[0] + ".png");
@@ -125,7 +152,9 @@ function iniciar(event){
         const paisOct4 = seleccionAleatoria();
         imgOctavos[3].setAttribute("src", "img/" + paisOct4[0] + ".png");
         document.querySelector(".pos-8-4").innerHTML = paisOct4[1];
-        const marcador2 = document.getElementById("marcadorNormal2");
+        const marcadorNormal2 = document.querySelector(".resultado-8-3_4");
+        const marcadorPenal2 = document.querySelector(".penales-8-3_4");
+        marcadorNormal2.innerHTML = "0-0"
 
         const paisOct5 = seleccionAleatoria();
         imgOctavos[4].setAttribute("src", "img/" + paisOct5[0] + ".png");
@@ -133,7 +162,9 @@ function iniciar(event){
         const paisOct6 = seleccionAleatoria();
         imgOctavos[5].setAttribute("src", "img/" + paisOct6[0] + ".png");
         document.querySelector(".pos-8-6").innerHTML = paisOct6[1];
-        const marcador3 = document.getElementById("marcadorNormal3");
+        const marcadorNormal3 = document.querySelector(".resultado-8-5_6");
+        const marcadorPenal3 = document.querySelector(".penales-8-5_6");
+        marcadorNormal3.innerHTML = "0-0"
 
         const paisOct7 = seleccionAleatoria();
         imgOctavos[6].setAttribute("src", "img/" + paisOct7[0] + ".png");
@@ -141,7 +172,9 @@ function iniciar(event){
         const paisOct8 = seleccionAleatoria();
         imgOctavos[7].setAttribute("src", "img/" + paisOct8[0] + ".png");
         document.querySelector(".pos-8-8").innerHTML = paisOct8[1];
-        const marcador4 = document.getElementById("marcadorNormal4");
+        const marcadorNormal4 = document.querySelector(".resultado-8-7_8");
+        const marcadorPenal4 = document.querySelector(".penales-8-7_8");
+        marcadorNormal4.innerHTML = "0-0"
 
         const paisOct9 = seleccionAleatoria();
         imgOctavos[8].setAttribute("src", "img/" + paisOct9[0] + ".png");
@@ -149,7 +182,9 @@ function iniciar(event){
         const paisOct10 = seleccionAleatoria();
         imgOctavos[9].setAttribute("src", "img/" + paisOct10[0] + ".png");
         document.querySelector(".pos-8-10").innerHTML = paisOct10[1];
-        const marcador5 = document.getElementById("marcadorNormal5");
+        const marcadorNormal5 = document.querySelector(".resultado-8-9_10");
+        const marcadorPenal5 = document.querySelector(".penales-8-9_10");
+        marcadorNormal5.innerHTML = "0-0"
         
         const paisOct11 = seleccionAleatoria();
         imgOctavos[10].setAttribute("src", "img/" + paisOct11[0] + ".png");
@@ -157,7 +192,9 @@ function iniciar(event){
         const paisOct12 = seleccionAleatoria();
         imgOctavos[11].setAttribute("src", "img/" + paisOct12[0] + ".png");
         document.querySelector(".pos-8-12").innerHTML = paisOct12[1];
-        const marcador6 = document.getElementById("marcadorNormal6");
+        const marcadorNormal6 = document.querySelector(".resultado-8-11_12");
+        const marcadorPenal6 = document.querySelector(".penales-8-11_12");
+        marcadorNormal6.innerHTML = "0-0";
 
         const paisOct13 = seleccionAleatoria();
         imgOctavos[12].setAttribute("src", "img/" + paisOct13[0] + ".png");
@@ -165,7 +202,9 @@ function iniciar(event){
         const paisOct14 = seleccionAleatoria();
         imgOctavos[13].setAttribute("src", "img/" + paisOct14[0] + ".png");
         document.querySelector(".pos-8-14").innerHTML = paisOct14[1];
-        const marcador7 = document.getElementById("marcadorNormal7");
+        const marcadorNormal7 = document.querySelector(".resultado-8-13_14");
+        const marcadorPenal7 = document.querySelector(".penales-8-13_14");
+        marcadorNormal7.innerHTML = "0-0";
 
         // Como son los dos ultimos no importa la seleccion aleatoria
         const paisOct15 = seleccionAleatoria();
@@ -174,26 +213,117 @@ function iniciar(event){
         const paisOct16 = seleccionAleatoria();
         imgOctavos[15].setAttribute("src", "img/" + paisOct16[0] + ".png");
         document.querySelector(".pos-8-16").innerHTML = paisOct16[1];
-        const marcador8 = document.getElementById("marcadorNormal8");
+        const marcadorNormal8 = document.querySelector(".resultado-8-15_16");
+        const marcadorPenal8 = document.querySelector(".penales-8-15_16");
+        marcadorNormal8.innerHTML = "0-0";
 
-        // Iniciamos las simulaciones
+        // Recolectamos todas las cosas de 4to
+        const contenedorCuartos = document.querySelector(".selectorCuartos");
+        const imgCuartos = contenedorCuartos.querySelectorAll("img");
+        var pNombresCuartos = [];
+        pNombresCuartos.push(document.querySelector(".pos-4-1"));
+        pNombresCuartos.push(document.querySelector(".pos-4-2"));
+        pNombresCuartos.push(document.querySelector(".pos-4-3"));
+        pNombresCuartos.push(document.querySelector(".pos-4-4"));
+        pNombresCuartos.push(document.querySelector(".pos-4-5"));
+        pNombresCuartos.push(document.querySelector(".pos-4-6"));
+        pNombresCuartos.push(document.querySelector(".pos-4-7"));
+        pNombresCuartos.push(document.querySelector(".pos-4-8"));
+
+        const marcadorNormal9 = document.querySelector(".resultado-4-1_2");
+        const marcadorPenal9 = document.querySelector(".penales-4-1_2");
+        const marcadorNormal10 = document.querySelector(".resultado-4-3_4");
+        const marcadorPenal10 = document.querySelector(".penales-4-3_4");
+        const marcadorNormal11 = document.querySelector(".resultado-4-5_6");
+        const marcadorPenal11 = document.querySelector(".penales-4-5_6");
+        const marcadorNormal12 = document.querySelector(".resultado-4-7_8");
+        const marcadorPenal12 = document.querySelector(".penales-4-7_8");
+
+        // Recolectamos las cosas de semifinal
+        const contenedorSemi = document.querySelector(".selectorSemi");
+        const imgSemi = contenedorSemi.querySelectorAll("img");
+        var pNombresSemi = [];
+        pNombresSemi.push(document.querySelector(".pos-semis-1"));
+        pNombresSemi.push(document.querySelector(".pos-semis-2"));
+        pNombresSemi.push(document.querySelector(".pos-semis-3"));
+        pNombresSemi.push(document.querySelector(".pos-semis-4"));
+
+        const marcadorNormal13 = document.querySelector(".resultado-semis-1_2");
+        const marcadorPenal13 = document.querySelector(".penales-semis-1_2")
+        const marcadorNormal14 = document.querySelector(".resultado-semis-3_4");
+        const marcadorPenal14 = document.querySelector(".penales-semis-3_4");
+
+        // Recolectamos las cosas para la final
+        const contenedorFinal = document.querySelector(".selectorFinal");
+
+        // Iniciamos las simulaciones de octavos
         Promise.all([
+            simulacionPartido(paisOct1, paisOct2, [marcadorNormal1, marcadorPenal1]),
+            simulacionPartido(paisOct3, paisOct4, [marcadorNormal2, marcadorPenal2]),
+            simulacionPartido(paisOct5, paisOct6, [marcadorNormal3, marcadorPenal3]),
+            simulacionPartido(paisOct7, paisOct8, [marcadorNormal4, marcadorPenal4]),
+            simulacionPartido(paisOct9, paisOct10, [marcadorNormal5, marcadorPenal5]),
+            simulacionPartido(paisOct11, paisOct12, [marcadorNormal6, marcadorPenal6]),
+            simulacionPartido(paisOct13, paisOct14, [marcadorNormal7, marcadorPenal7]),
+            simulacionPartido(paisOct15, paisOct16, [marcadorNormal8, marcadorPenal8]),
 
-            simulacionPartido(paisOct1, paisOct2, marcador1),
-            simulacionPartido(paisOct3, paisOct4, marcador2),
-            simulacionPartido(paisOct5, paisOct6, marcador3),
-            simulacionPartido(paisOct7, paisOct8, marcador4),
-            simulacionPartido(paisOct9, paisOct10, marcador5),
-            simulacionPartido(paisOct11, paisOct12, marcador6),
-            simulacionPartido(paisOct13, paisOct14, marcador7),
-            simulacionPartido(paisOct15, paisOct16, marcador8),
+            ]).then(
+                (resultados) => {
+                    // Cuando tenemos todsos los resultados descomprmimos los empates
+                    const resultadosOctavos = descomprimirResultados(resultados);                    
 
-            ]).then( (resultados) => {
-                console.log("promesa finalizada")
-            })
+                    for (let k = 0 ; k <= 7 ; k++){
+                        imgCuartos[k].setAttribute("src", "img/" + resultadosOctavos[k][0] + ".png");
+                        pNombresCuartos[k].innerHTML = resultadosOctavos[k][1];
+                    }
 
-        // Decimos que la simulacion finalizo
-        simulacionIniciada = false;
+                    // Establecemos los marcadores en 0-0
+                    marcadorNormal9.innerHTML = "0-0";
+                    marcadorNormal10.innerHTML = "0-0";
+                    marcadorNormal11.innerHTML = "0-0";
+                    marcadorNormal12.innerHTML = "0-0";
+
+                    // Creamos la nueva promesa para cuartos de final
+                    Promise.all([
+
+                        simulacionPartido(resultadosOctavos[0], resultadosOctavos[1], [marcadorNormal9, marcadorPenal9]),
+                        simulacionPartido(resultadosOctavos[2], resultadosOctavos[3], [marcadorNormal10, marcadorPenal10]),
+                        simulacionPartido(resultadosOctavos[4], resultadosOctavos[5], [marcadorNormal11, marcadorPenal11]),
+                        simulacionPartido(resultadosOctavos[6], resultadosOctavos[7], [marcadorNormal12, marcadorPenal12])
+
+                    ]).then(
+                        (resultados) => {
+                            // Cuando tenemos los resultados del 4to de final los descomprimimos
+                            const resultadosCuartos = descomprimirResultados(resultados);
+
+                            for (let k = 0 ; k <= 3 ; k++){
+                                imgSemi[k].setAttribute("src", "img/" + resultadosCuartos[k][0] + ".png");
+                                pNombresSemi[k].innerHTML = resultadosCuartos[k][1];
+                            }
+                            
+                            // Establecemos los marcadores
+                            marcadorNormal13.innerHTML = "0-0";
+                            marcadorNormal14.innerHTML = "0-0";
+
+                            // Creamos la nueva promesa para la semifinal
+                            Promise.all([
+
+                                simulacionPartido(resultadosCuartos[0], resultadosCuartos[1], [marcadorNormal13, marcadorPenal13]),
+                                simulacionPartido(resultadosCuartos[2], resultadosCuartos[3], [marcadorNormal14, marcadorPenal14])
+
+                            ]).then(
+                                (resultados) => {
+                                    // Cuando tenemos los resultados de las semifinales los descomprimimos
+                                    const resultadosSemis = descomprimirResultados(resultados);
+                                }
+                            )
+
+                            // Terminamos la simulacion
+                            simulacionIniciada = false
+                        }
+                    )
+                }
+            )
 
     } else if(listaSeleccionados.length === 16 && simulacionIniciada){
         alert("Ya hay una simulacion en curso");
@@ -206,70 +336,110 @@ function iniciar(event){
     }
 }
 
-// Funcion que selecciona los paises y pasa su abreviacion
-function seleccionAleatoria(){
-    // El random devuelve un numero entre 0 y 1, lo multiplicamos por la longitud de la lista y redondeamos a entero
-    var indice = Math.floor(Math.random() * listaSeleccionados.length);
-    const pais = listaSeleccionados[indice];
-    // Borramos el pais de la lista de seleccioandos
-    listaSeleccionados.splice(indice, 1);
-
-    // Si su abreviacion no coincide con sus primeras 3 letras las pasamos, sino la creamos
-    if(pais == "venezuela"){
-        return [pais, "VNZ"];
-
-    }else if (pais == "inglaterra"){
-        return [pais, "GBR"];
-        
-    }else if (pais == "alemania"){
-        return [pais, "DEU"];
-        
-    }else if (pais == "nigeria"){
-        return [pais, "NGA"];
-        
-    }else if (pais == "portugal"){
-        return [pais, "PRT"];
-        
-    } else if(pais == "corea"){
-        return [pais, "KOR"];
-
-    } else {
-        return [pais, pais.slice(0,3).toUpperCase()]
-    }
-}
-
 // Creamos una función que simula un partido entre dos equipos y devuelve una promesa
-function simulacionPartido(equipo1, equipo2, marcador){
-
+function simulacionPartido(equipo1, equipo2, marcadores){
     return new Promise( (resolve, reject) => {
         // Inicializamos los goles de cada equipo en cero
         var golesEquipo1 = 0;
         var golesEquipo2 = 0;
+
         // Creamos una variable para contar las iteraciones
         var contador = 0;
+
         // Usamos setInterval para ejecutar la función cada 15 segundos
         var intervalo = setInterval( () => {
             // Llamamos a la función marcadorGol y guardamos el resultado
             var gol = marcadorGol();
-            console.log(gol[0])
-            console.log(gol[1])
             // Sumamos los goles según el equipo
             if(gol[1] === 0){
                 golesEquipo1 = golesEquipo1 +  gol[0];
-                marcador.innerHTML = golesEquipo1.toString() + "-" + golesEquipo2.toString();
+                marcadores[0].innerHTML = golesEquipo1.toString() + "-" + golesEquipo2.toString();
             } else {
                 golesEquipo2 = golesEquipo2 + gol[0];
-                marcador.innerHTML = golesEquipo1.toString() + "-" + golesEquipo2.toString();
+                marcadores[0].innerHTML = golesEquipo1.toString() + "-" + golesEquipo2.toString();
             }
             // Incrementamos el contador
             contador++;
             // Si el contador llega a 4, paramos el intervalo y resolvemos la promesa con el resultado
             if (contador === 5) {
                 clearInterval(intervalo);
-                resolve([equipo1, equipo2, golesEquipo1, golesEquipo2]);
+                // Devolvemos los 2 equipos si quedan en empate
+                if(golesEquipo1 === golesEquipo2){
+                    Promise.all([
+                        resolverEmpate(equipo1, equipo2, marcadores[1])
+                    ]).then(
+                        (resultado) => {
+                            resolve(resultado);
+                        }
+                    )
+
+                } else if (golesEquipo2 > golesEquipo1){
+                    resolve(equipo2);
+
+                } else {
+                    resolve(equipo1);
+                }
             }
         }, 5000);
     });
+}
+
+function resolverEmpate(equipo1, equipo2, marcador){
+    return new Promise((resolve, reject) => {
+        var golesEquipo1 = 0;
+        var golesEquipo2 = 0;
+
+        var contador = 0;
+
+        var intervalo = setInterval( () => {
+
+        var gol = marcadorGol()
+
+        if(gol[1] === 0){
+            golesEquipo1 = golesEquipo1 +  gol[0];
+            marcador.innerHTML = "(" + golesEquipo1.toString() + "-" + golesEquipo2.toString() + ")";
+        } else {
+            golesEquipo2 = golesEquipo2 + gol[0];
+            marcador.innerHTML = "(" + golesEquipo1.toString() + "-" + golesEquipo2.toString() + ")";
+        }
+        contador++
+
+        // Condicion de detenida de la tanda de penales
+        if(contador === 5){
+            let contador2 = 1
+            clearInterval(intervalo);
+
+            if(golesEquipo1 == golesEquipo2){
+                intervalo = setInterval(() => {
+                    gol = marcadorGol()
+
+                    if(gol[1] === 0){
+                        golesEquipo1 = golesEquipo1 +  gol[0];
+                        marcador.innerHTML = "(" + golesEquipo1.toString() + "-" + golesEquipo2.toString() + ")";
+                    } else {
+                        golesEquipo2 = golesEquipo2 + gol[0];
+                        marcador.innerHTML = "(" + golesEquipo1.toString() + "-" + golesEquipo2.toString() + ")";
+                    }
+
+                    if (contador2 > 2 && golesEquipo1 > golesEquipo2){
+                        clearInterval(intervalo);
+                        resolve (equipo1)
+                    } else if(contador2 > 2 && golesEquipo2 > golesEquipo1){
+                        clearInterval(intervalo);
+                        resolve(equipo2)
+                    }
+
+                    contador2++
+                }, 1000)
+
+            }else if(golesEquipo1 > golesEquipo2){
+                resolve(equipo1);
+            } else {
+                resolve(equipo2);
+            }
+        }
+    }, 1000)
+    })
 }
 
 // Funcion que marca los goles
@@ -292,173 +462,45 @@ function marcadorGol(){
     }
 }
 
+// Funcion que selecciona los paises y pasa su abreviacion
+function seleccionAleatoria(){
+    // El random devuelve un numero entre 0 y 1, lo multiplicamos por la longitud de la lista y redondeamos a entero
+    var indice = Math.floor(Math.random() * listaSeleccionados.length);
+    const pais = listaSeleccionados[indice];
+    // Borramos el pais de la lista de seleccioandos
+    listaSeleccionados.splice(indice, 1);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Funcion que muestra el resultado final del partido y devuelve el ganador o el empate
-function pResultado(resultado) {
-    // Extraemos los nombres y los goles de los equipos del resultado
-    var [equipo1, equipo2, golesEquipo1, golesEquipo2] = resultado;
-    // Mostramos los nombres y los goles de los equipos
-    console.log(`${equipo1}: ${golesEquipo1}`);
-    console.log(`${equipo2}: ${golesEquipo2}`);
-    // Comparamos los goles para determinar el ganador o el empate
-    if (golesEquipo1 > golesEquipo2) {
-        console.log(`${equipo1} pasa a la siguiente ronda`);
-        return equipo1;
-    } else if (golesEquipo1 < golesEquipo2) {
-        console.log(`${equipo2} pasa a la siguiente ronda`);
-        return equipo2;
-    } else {
-        console.log(`Hay empate entre ${equipo1} y ${equipo2}`);
-        return 'empate';
-    }
-}
-
-// Funcion que simula una tanda de penales entre dos equipos y devuelve el ganador
-function simulacionPenales(equipo1, equipo2) {
-    return new Promise( (resolve, reject) => {
-        // Inicializamos los penales de cada equipo en cero
-        var penalesEquipo1 = 0;
-        var penalesEquipo2 = 0;
-        // Creamos una variable para contar las iteraciones
-        var contador = 0;
-        // Usamos setInterval para ejecutar la función cada 15 segundos
-        var intervalo = setInterval( () => {
-            // Llamamos a la función marcadorPenal y guardamos el resultado
-            var penal = marcadorPenal();
-            // Sumamos los penales según el equipo
-            if(penal[1] == 0){
-                penalesEquipo1 += penal[0];
-            } else {
-                penalesEquipo2 += penal[0];
-            }
-            // Incrementamos el contador
-            contador++;
-            // Si el contador llega a 10 o hay una diferencia de más de dos penales, paramos el intervalo y resolvemos la promesa con el ganador
-            if (contador == 10 || Math.abs(penalesEquipo1 - penalesEquipo2) > 2) {
-                clearInterval(intervalo);
-                if (penalesEquipo1 > penalesEquipo2) {
-                    resolve(equipo1);
-                } else {
-                    resolve(equipo2);
-                }
-            }
-        }, 15000);
-    });
-}
-
-// Funcion que marca los penales
-function marcadorPenal(){
-    const probabilidad = Math.random()
-    const equipo = Math.random()
-
-    if(probabilidad >= 0.5 && equipo >= 0.5){
-        return [0, 1]
-
-    } else if(probabilidad < 0.5 && equipo >= 0.5){
-        return [0, 0]
-
-    } else if(probabilidad >= 0.5 && equipo < 0.5){
-        return [1, 1]
-
-    } else {
-        return [1,0]
-
-    }
-}
-
-// Funcion que simula el mini torneo entre cuatro equipos
-function simulacionTorneo(equipos) {
-    // Simulamos los dos partidos de semifinales y esperamos a que se resuelvan las promesas
-    Promise.all([
-        simulacionPartido(equipos[0], equipos[1]),
-        simulacionPartido(equipos[2], equipos[3])
-    ]).then( (resultados) => {
-        // Mostramos y procesamos los resultados de las semifinales
-        console.log('Resultados de las semifinales:');
-        var finalistas = [];
-        for (let resultado of resultados) {
-            var ganador = pResultado(resultado);
-            // Si hay empate, simulamos una tanda de penales y esperamos a que se resuelva la promesa
-            if (ganador == 'empate') {
-                console.log('Se define por penales');
-                simulacionPenales(resultado[0], resultado[1]).then( (ganador) => {
-                    console.log(`El ganador por penales es ${ganador}`);
-                    finalistas.push(ganador);
-                    // Si ya tenemos dos finalistas, simulamos la final y esperamos a que se resuelva la promesa
-                    if (finalistas.length == 2) {
-                        simulacionPartido(finalistas[0], finalistas[1]).then( (resultado) => {
-                            // Mostramos y procesamos el resultado de la final
-                            console.log('Resultado de la final:');
-                            var campeon = pResultado(resultado);
-                            // Si hay empate, simulamos otra tanda de penales y esperamos a que se resuelva la promesa
-                            if (campeon == 'empate') {
-                                console.log('Se define por penales');
-                                simulacionPenales(resultado[0], resultado[1]).then( (campeon) => {
-                                    console.log(`El campeón por penales es ${campeon}`);
-                                }).catch( (error) => {
-                                    console.error(error);
-                                });
-                            } else {
-                                console.log(`El campeón es ${campeon}`);
-                            }
-                        }).catch( (error) => {
-                            console.error(error);
-                        });
-                    }
-                }).catch( (error) => {
-                    console.error(error);
-                });
-            } else {
-                finalistas.push(ganador);
-                // Si ya tenemos dos finalistas, simulamos la final y esperamos a que se resuelva la promesa
-                if (finalistas.length == 2) {
-                    simulacionPartido(finalistas[0], finalistas[1]).then( (resultado) => {
-                        // Mostramos y procesamos el resultado de la final
-                        console.log('Resultado de la final:');
-                        var campeon = pResultado(resultado);
-                        // Si hay empate, simulamos otra tanda de penales y esperamos a que se resuelva la promesa
-                        if (campeon == 'empate') {
-                            console.log('Se define por penales');
-                            simulacionPenales(resultado[0], resultado[1]).then( (campeon) => {
-                                console.log(`El campeón por penales es ${campeon}`);
-                            }).catch( (error) => {
-                                console.error(error);
-                            });
-                        } else {
-                            console.log(`El campeón es ${campeon}`);
-                        }
-                    }).catch( (error) => {
-                        console.error(error);
-                    });
-                }
-            }
-            
-        }
+    // Si su abreviacion no coincide con sus primeras 3 letras las pasamos, sino la creamos
+    if (pais == "inglaterra"){
+        return [pais, "GBR"];
         
-    }).catch( (error) => {
-        // Mostramos el error si ocurre
-        console.error(error);
-    });
+    }else if (pais == "alemania"){
+        return [pais, "DEU"];
+        
+    }else if (pais == "nigeria"){
+        return [pais, "NGA"];
+        
+    }else if (pais == "portugal"){
+        return [pais, "PRT"];
+        
+    } else if(pais == "corea"){
+        return [pais, "KOR"];
+
+    } else {
+        return [pais, pais.slice(0,3).toUpperCase()]
+    }
+}
+
+function descomprimirResultados(resultados){
+    var resultadosOctavos = []
+
+    for(let k=0 ; k < resultados.length ; k++){
+        if(resultados[k].length === 1){
+            resultadosOctavos.push(resultados[k][0])
+        } else {
+            resultadosOctavos.push(resultados[k])
+        }
+    }
+
+    return resultadosOctavos;
 }
