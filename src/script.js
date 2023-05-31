@@ -5,6 +5,11 @@ window.addEventListener("load", main)
 var listaSeleccionados = [];
 var simulacionIniciada = false;
 var botonesPaises;
+var semifinalistas = []
+var finalistas = []
+var ganador
+var segundoLugar
+var tercerLugar
 
 // Añadimos los eventos necesarios a los botones
 function main(event){
@@ -255,6 +260,21 @@ function iniciar(event){
 
         // Recolectamos las cosas para la final
         const contenedorFinal = document.querySelector(".selectorFinal");
+        const imgFinal = contenedorFinal.querySelectorAll("img");
+        var pNombresFinal = [];
+        pNombresFinal.push(document.querySelector(".pos-final-1"));
+        pNombresFinal.push(document.querySelector(".pos-final-2"));
+        const marcadorNormal15 = document.querySelector(".resultado-final-1_2");
+        const marcadorPenal15 = document.querySelector(".penales-final-1_2");
+
+        // Recolectamos las cosas para el 3er puesto
+        const contenedro3erPuesto = document.querySelector(".selector3erPuesto");
+        img3erPuesto = contenedro3erPuesto.querySelectorAll("img");
+        var pNombres3erPuesto = [];
+        pNombres3erPuesto.push(document.querySelector(".pos-3-1"));
+        pNombres3erPuesto.push(document.querySelector(".pos-3-2"));
+        const marcadorNormal16 = document.querySelector(".resultado-3-1_2");
+        const marcadorPenal16 = document.querySelector(".penales-3-1_2 ")
 
         // Iniciamos las simulaciones de octavos
         Promise.all([
@@ -299,6 +319,7 @@ function iniciar(event){
                             for (let k = 0 ; k <= 3 ; k++){
                                 imgSemi[k].setAttribute("src", "img/" + resultadosCuartos[k][0] + ".png");
                                 pNombresSemi[k].innerHTML = resultadosCuartos[k][1];
+                                semifinalistas.push(resultadosCuartos[k])
                             }
                             
                             // Establecemos los marcadores
@@ -315,11 +336,60 @@ function iniciar(event){
                                 (resultados) => {
                                     // Cuando tenemos los resultados de las semifinales los descomprimimos
                                     const resultadosSemis = descomprimirResultados(resultados);
+
+                                    // Depositamos la informacion en los contenedores de la final
+                                    for(let k=0 ; k <= 1; k++){
+                                        imgFinal[k].setAttribute("src", "img/" + resultadosSemis[k][0] + ".png");
+                                        pNombresFinal[k].innerHTML = resultadosSemis[k][1];
+                                    }
+
+                                    // Inicializamos los marcadores
+                                    marcadorNormal15.innerHTML = "0-0";
+                                    marcadorNormal16.innerHTML = "0-0";
+                                    
+                                    // Guardamos los finalistas
+                                    finalistas = resultadosSemis;
+                                    console.log(finalistas)
+
+                                    // Recuperamos la informacion de quienes son los semifinalistas
+                                    semifinalistas.splice(semifinalistas.indexOf(resultadosSemis[0]), 1);
+                                    semifinalistas.splice(semifinalistas.indexOf(resultadosSemis[1]), 1);
+
+                                    // Depositamos la informacion en el 3er lugar
+                                    for(let k=0 ; k<= 1 ; k++){
+                                        img3erPuesto[k].setAttribute("src", "img/" + semifinalistas[k][0] + ".png")
+                                        pNombres3erPuesto.innerHTML = semifinalistas[k][1]
+                                    }
+
+                                    // Creamos la promesa que resuelve el 1er lugar y 3er lugar
+                                    Promise.all([
+
+                                        simulacionPartido(resultadosSemis[0], resultadosSemis[1], [marcadorNormal15, marcadorPenal15]),
+                                        simulacionPartido(semifinalistas[0], semifinalistas[1], [marcadorNormal16, marcadorPenal16])
+
+                                    ]).then(
+                                        (resultados) => {
+                                            const resultadosFinal = descomprimirResultados(resultados);
+
+                                            // Guardamos los ganadores
+                                            ganador = resultadosFinal[0];
+                                            tercerLugar = resultadosFinal[1];
+
+                                            // A la lista de finalistas le quitamos el ganador para conseguir el 2do lugar
+                                            finalistas.splice(finalistas.indexOf(ganador), 1);
+                                            console.log(finalistas)
+                                            segundoLugar = finalistas[0];
+
+                                            console.log("El ganador es " + ganador[0]);
+                                            console.log("El segundo lugar es " + segundoLugar[0]);
+                                            console.log("El tercer lugar es " + tercerLugar[0]);
+
+                                            // Terminamos la simulacion
+                                            simulacionIniciada = false
+                                        }
+                                    )
                                 }
                             )
-
-                            // Terminamos la simulacion
-                            simulacionIniciada = false
                         }
                     )
                 }
@@ -380,7 +450,7 @@ function simulacionPartido(equipo1, equipo2, marcadores){
                     resolve(equipo1);
                 }
             }
-        }, 5000);
+        }, 3000);
     });
 }
 
@@ -428,7 +498,6 @@ function resolverEmpate(equipo1, equipo2, marcador){
                         clearInterval(intervalo);
                         resolve(equipo2)
                     }
-
                     contador2++
                 }, 1000)
 
