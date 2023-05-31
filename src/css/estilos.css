@@ -2,6 +2,7 @@
     box-sizing: inherit;
   }
 
+/*----------------------------------------------------------------------- ESTILOS GENERALES -------------------------------------------------------------------------------------*/
 html{
     font-size: 62.5%;/*UN REM VALE 16PX, por lo tanto si le decimos al programa que tome el 
     62.5% de ese tamaño se nos hará más facil calcular cuanto equivale cada rem ya que cada rem ahora va a valer 10px*/
@@ -28,15 +29,22 @@ h4{
 p{
     font-size: 2rem;
 }
-
 body{
     margin: 0;
     font-family: 'Fredoka', sans-serif;
 }
+/*----------------------------------------------------------------------- UTILIDADES GENÉRICAS -------------------------------------------------------------------------------------*/
+
+.flex{
+    display: grid;
+    grid-template-columns: repeat(10, 12rem);
+}
+
 
 .text-center{
     text-align: center;
 }
+/*----------------------------------------------------------------------- ESTILOS DEL HEADER -------------------------------------------------------------------------------------*/
 
 .top{
     background-image: url('../img/fondoGradiente.png');
@@ -50,6 +58,7 @@ body{
     color: #fff;
 }
 
+/*---------------------------------------------------------------- ESTILOS DEL APARTADO DE SELECCIÓN -------------------------------------------------------------------------------------*/
 
 div.margin-1 .img-contenedor {
     transition: 100ms;
@@ -74,10 +83,7 @@ div.margin-1 .img-contenedor {
     margin: 0;
 }
 
-.flex{
-    display: grid;
-    grid-template-columns: repeat(10, 12rem);
-}
+
 
 .Contenedor-botones{
     display: flex;
@@ -100,7 +106,7 @@ div.margin-1 .img-contenedor {
     width: 20rem;
     height: 10rem;
     font-size: 2.5rem;
-    margin: 4rem 0rem 0rem;
+    margin: 4rem 0rem 0rem 4rem;
 }
 
 .btn:hover{

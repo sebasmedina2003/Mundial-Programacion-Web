@@ -379,7 +379,7 @@ function iniciar(event){
                                             finalistas.splice(finalistas.indexOf(ganador), 1);
                                             segundoLugar = finalistas[0];
 
-                                            abrirModal(ganador[0], segundoLugar[0], tercerLugar[0],)
+                                            abrirModal(ganador[0], segundoLugar[0], tercerLugar[0])
                                             
 
                                             console.log("El ganador es " + ganador[0]);
@@ -586,9 +586,9 @@ function abrirModal(nombre_campeon, nombre_subcampeon, nombre_tercerLugar,){
     let nombre_subcampeon1 = nombre_subcampeon.toLowerCase()
     let nombre_tercerLugar1 = nombre_tercerLugar.toLowerCase()
 
-    document.getElementsByClassName("pais-circular-llave-campeon").src = "img/" + nombre_campeon1 + ".png"
-    document.getElementsByClassName("pais-circular-llave-subcampeon").src = "img/" + nombre_subcampeon1 + ".png"
-    document.getElementsByClassName("pais-circular-llave-tercerLugar").src = "img/" + nombre_tercerLugar1 + ".png"
+    document.getElementsByClassName("pais-circular-llave-campeon")[0].src = "img/" + nombre_campeon1 + ".png";
+    document.getElementsByClassName("pais-circular-llave-subcampeon")[0].src = "img/" + nombre_subcampeon1 + ".png";
+    document.getElementsByClassName("pais-circular-llave-tercerLugar")[0].src = "img/" + nombre_tercerLugar1 + ".png";
 
     let modal = document.querySelector(".modal-background")
     modal.style.display = "flex";
