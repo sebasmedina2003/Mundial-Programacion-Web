@@ -349,16 +349,16 @@ function iniciar(event){
                                     
                                     // Guardamos los finalistas
                                     finalistas = resultadosSemis;
-                                    console.log(finalistas)
 
                                     // Recuperamos la informacion de quienes son los semifinalistas
                                     semifinalistas.splice(semifinalistas.indexOf(resultadosSemis[0]), 1);
                                     semifinalistas.splice(semifinalistas.indexOf(resultadosSemis[1]), 1);
 
                                     // Depositamos la informacion en el 3er lugar
+                                    console.log(semifinalistas)
                                     for(let k=0 ; k<= 1 ; k++){
-                                        img3erPuesto[k].setAttribute("src", "img/" + semifinalistas[k][0] + ".png")
-                                        pNombres3erPuesto.innerHTML = semifinalistas[k][1]
+                                        img3erPuesto[k].setAttribute("src", "img/" + semifinalistas[k][0] + ".png");
+                                        pNombres3erPuesto[k].innerHTML = semifinalistas[k][1];
                                     }
 
                                     // Creamos la promesa que resuelve el 1er lugar y 3er lugar
@@ -377,7 +377,6 @@ function iniciar(event){
 
                                             // A la lista de finalistas le quitamos el ganador para conseguir el 2do lugar
                                             finalistas.splice(finalistas.indexOf(ganador), 1);
-                                            console.log(finalistas)
                                             segundoLugar = finalistas[0];
 
                                             console.log("El ganador es " + ganador[0]);
