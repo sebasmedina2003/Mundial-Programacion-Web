@@ -41,9 +41,9 @@ function botonSeleccionado(event){
         this.style.border = "3px solid red";
         listaSeleccionados.push(this.value);
     } else if (simulacionIniciada){
-        alert("Hay una simulacion en curso");
+        swal("Error","Hay una simulación en curso","error");
     } else {
-        alert("A excedido el numero de equipos seleccionados");
+        swal("Error","Ha excedido el número de equipos seleccionados","error");
     }
 }
 
@@ -72,7 +72,7 @@ function limpiarSeleccion(event){
         limpiarLlave(divFinal);
         limpiarLlave(divSubCampeon);
     } else {
-        alert("Hay una simulacion en juego");
+        swal("Error","Hay una simulación en juego","error");
     }
 }
 
@@ -398,13 +398,13 @@ function iniciar(event){
             )
 
     } else if(listaSeleccionados.length === 16 && simulacionIniciada){
-        alert("Ya hay una simulacion en curso");
+        swal("Error","Ya hay una simulación en curso","error");
 
     } else if(listaSeleccionados.length <= 15 && !simulacionIniciada){
-        alert("No ha seleccionado la cantidad de paises necesarios");
+        swal("Error","No ha seleccionado la cantidad de países necesarios","error");
 
     } else{
-        alert("Ha ocurrido un problema");
+        swal("Error","Ha ocurrido un problema","error");
     }
 }
 
@@ -577,9 +577,9 @@ function descomprimirResultados(resultados){
 }
 
 function abrirModal(nombre_campeon, nombre_subcampeon, nombre_tercerLugar,){
-    document.querySelector(".campeon-modal").innerHTML = nombre_campeon
-    document.querySelector(".subcampeon-modal").innerHTML = nombre_subcampeon
-    document.querySelector(".tercerLugar-modal").innerHTML = nombre_tercerLugar
+    document.querySelector(".campeon-modal").innerHTML = nombre_campeon.toUpperCase()
+    document.querySelector(".subcampeon-modal").innerHTML = nombre_subcampeon.toUpperCase()
+    document.querySelector(".tercerLugar-modal").innerHTML = nombre_tercerLugar.toUpperCase()
 
 
     let nombre_campeon1 = nombre_campeon.toLowerCase()
