@@ -404,7 +404,7 @@ function iniciar(event){
         swal("Error","No ha seleccionado la cantidad de países necesarios","error");
 
     } else{
-        swal("Error","Ha ocurrido un problema","error");
+        swal("Error","Simulacion en curso","error");
     }
 }
 
@@ -433,7 +433,7 @@ function simulacionPartido(equipo1, equipo2, marcadores){
             // Incrementamos el contador
             contador++;
             // Si el contador llega a 4, paramos el intervalo y resolvemos la promesa con el resultado
-            if (contador === 5) {
+            if (contador === 4) {
                 clearInterval(intervalo);
                 // Devolvemos los 2 equipos si quedan en empate
                 if(golesEquipo1 === golesEquipo2){
@@ -452,7 +452,7 @@ function simulacionPartido(equipo1, equipo2, marcadores){
                     resolve(equipo1);
                 }
             }
-        }, 3000);
+        }, 15000);
     });
 }
 
@@ -462,6 +462,10 @@ function resolverEmpate(equipo1, equipo2, marcador){
         var golesEquipo2 = 0;
 
         var contador = 0;
+
+        // Inicializamos el marcador
+        marcador.innerHTML = "(" + golesEquipo1.toString() + "-" + golesEquipo2.toString() + ")";
+        
 
         var intervalo = setInterval( () => {
 
@@ -482,26 +486,26 @@ function resolverEmpate(equipo1, equipo2, marcador){
             clearInterval(intervalo);
 
             if(golesEquipo1 == golesEquipo2){
-                intervalo = setInterval(() => {
-                    gol = marcadorGol()
+                    intervalo = setInterval(() => {
+                        gol = marcadorGol()
 
-                    if(gol[1] === 0){
-                        golesEquipo1 = golesEquipo1 +  gol[0];
-                        marcador.innerHTML = "(" + golesEquipo1.toString() + "-" + golesEquipo2.toString() + ")";
-                    } else {
-                        golesEquipo2 = golesEquipo2 + gol[0];
-                        marcador.innerHTML = "(" + golesEquipo1.toString() + "-" + golesEquipo2.toString() + ")";
-                    }
+                        if(gol[1] === 0){
+                                golesEquipo1 = golesEquipo1 +  gol[0];
+                                marcador.innerHTML = "(" + golesEquipo1.toString() + "-" + golesEquipo2.toString() + ")";
+                            } else {
+                                golesEquipo2 = golesEquipo2 + gol[0];
+                                marcador.innerHTML = "(" + golesEquipo1.toString() + "-" + golesEquipo2.toString() + ")";
+                            }
 
-                    if (contador2 > 2 && golesEquipo1 > golesEquipo2){
-                        clearInterval(intervalo);
-                        resolve (equipo1)
-                    } else if(contador2 > 2 && golesEquipo2 > golesEquipo1){
-                        clearInterval(intervalo);
-                        resolve(equipo2)
-                    }
-                    contador2++
-                }, 1000)
+                            if (contador2 > 2 && golesEquipo1 > golesEquipo2){
+                                clearInterval(intervalo);
+                                resolve (equipo1)
+                            } else if(contador2 > 2 && golesEquipo2 > golesEquipo1){
+                                clearInterval(intervalo);
+                                resolve(equipo2)
+                            }
+                        contador2++
+                    }, 3000)
 
             }else if(golesEquipo1 > golesEquipo2){
                 resolve(equipo1);
@@ -509,15 +513,17 @@ function resolverEmpate(equipo1, equipo2, marcador){
                 resolve(equipo2);
             }
         }
-    }, 1000)
+    }, 3000)
     })
 }
 
 // Funcion que marca los goles
 function marcadorGol(){
+    // Sacamos dos numeros entre 0 y 1 que representan las probabilidades de gol y del equipo
     const probabilidad = Math.random()
     const equipo = Math.random()
 
+    // El formato [n, m] viene como n=equipo y m=gol
     if(probabilidad >= 0.5 && equipo >= 0.5){
         return [0, 1]
 
@@ -543,19 +549,19 @@ function seleccionAleatoria(){
 
     // Si su abreviacion no coincide con sus primeras 3 letras las pasamos, sino la creamos
     if (pais == "inglaterra"){
-        return [pais, "GBR"];
+        return [pais, "ENG"];
         
     }else if (pais == "alemania"){
-        return [pais, "DEU"];
+        return [pais, "GER"];
         
     }else if (pais == "nigeria"){
         return [pais, "NGA"];
         
-    }else if (pais == "portugal"){
-        return [pais, "PRT"];
-        
-    } else if(pais == "corea"){
+    }else if(pais == "corea"){
         return [pais, "KOR"];
+
+    }else if(pais == "italia"){
+        return [pais, "&nbspITA"];
 
     } else {
         return [pais, pais.slice(0,3).toUpperCase()]
