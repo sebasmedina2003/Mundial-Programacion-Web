@@ -84,8 +84,11 @@ function limpiarLlave(divContenedor){
 
     img.forEach(
         element => {
-            // Les ponemos un fondo blanco
+            // Les ponemos un fondo blanco y le quitamos la transicion si la tiene y recobramos la opacidad
+            element.style.transition = "0ms";
             element.setAttribute("src", "img/fondo-blanco.png");
+            element.style.border = "solid #30D5C8 0px ";
+            element.style.opacity = "1";
         }
     );
 
@@ -278,14 +281,14 @@ function iniciar(event){
 
         // Iniciamos las simulaciones de octavos
         Promise.all([
-            simulacionPartido(paisOct1, paisOct2, [marcadorNormal1, marcadorPenal1]),
-            simulacionPartido(paisOct3, paisOct4, [marcadorNormal2, marcadorPenal2]),
-            simulacionPartido(paisOct5, paisOct6, [marcadorNormal3, marcadorPenal3]),
-            simulacionPartido(paisOct7, paisOct8, [marcadorNormal4, marcadorPenal4]),
-            simulacionPartido(paisOct9, paisOct10, [marcadorNormal5, marcadorPenal5]),
-            simulacionPartido(paisOct11, paisOct12, [marcadorNormal6, marcadorPenal6]),
-            simulacionPartido(paisOct13, paisOct14, [marcadorNormal7, marcadorPenal7]),
-            simulacionPartido(paisOct15, paisOct16, [marcadorNormal8, marcadorPenal8]),
+            simulacionPartido(paisOct1, paisOct2, [marcadorNormal1, marcadorPenal1], [imgOctavos[0], imgOctavos[1]]),
+            simulacionPartido(paisOct3, paisOct4, [marcadorNormal2, marcadorPenal2], [imgOctavos[2], imgOctavos[3]]),
+            simulacionPartido(paisOct5, paisOct6, [marcadorNormal3, marcadorPenal3], [imgOctavos[4], imgOctavos[5]]),
+            simulacionPartido(paisOct7, paisOct8, [marcadorNormal4, marcadorPenal4], [imgOctavos[6], imgOctavos[7]]),
+            simulacionPartido(paisOct9, paisOct10, [marcadorNormal5, marcadorPenal5], [imgOctavos[8], imgOctavos[9]]),
+            simulacionPartido(paisOct11, paisOct12, [marcadorNormal6, marcadorPenal6], [imgOctavos[10], imgOctavos[11]]),
+            simulacionPartido(paisOct13, paisOct14, [marcadorNormal7, marcadorPenal7], [imgOctavos[12], imgOctavos[13]]),
+            simulacionPartido(paisOct15, paisOct16, [marcadorNormal8, marcadorPenal8], [imgOctavos[14], imgOctavos[15]]),
 
             ]).then(
                 (resultados) => {
@@ -306,16 +309,17 @@ function iniciar(event){
                     // Creamos la nueva promesa para cuartos de final
                     Promise.all([
 
-                        simulacionPartido(resultadosOctavos[0], resultadosOctavos[1], [marcadorNormal9, marcadorPenal9]),
-                        simulacionPartido(resultadosOctavos[2], resultadosOctavos[3], [marcadorNormal10, marcadorPenal10]),
-                        simulacionPartido(resultadosOctavos[4], resultadosOctavos[5], [marcadorNormal11, marcadorPenal11]),
-                        simulacionPartido(resultadosOctavos[6], resultadosOctavos[7], [marcadorNormal12, marcadorPenal12])
+                        simulacionPartido(resultadosOctavos[0], resultadosOctavos[1], [marcadorNormal9, marcadorPenal9], [imgCuartos[0], imgCuartos[1]]),
+                        simulacionPartido(resultadosOctavos[2], resultadosOctavos[3], [marcadorNormal10, marcadorPenal10], [imgCuartos[2], imgCuartos[3]]),
+                        simulacionPartido(resultadosOctavos[4], resultadosOctavos[5], [marcadorNormal11, marcadorPenal11], [imgCuartos[4], imgCuartos[5]]),
+                        simulacionPartido(resultadosOctavos[6], resultadosOctavos[7], [marcadorNormal12, marcadorPenal12], [imgCuartos[6], imgCuartos[7]])
 
                     ]).then(
                         (resultados) => {
                             // Cuando tenemos los resultados del 4to de final los descomprimimos
                             const resultadosCuartos = descomprimirResultados(resultados);
 
+                            // Ponemos las imagenes y los parrafos personalizados por equipos
                             for (let k = 0 ; k <= 3 ; k++){
                                 imgSemi[k].setAttribute("src", "img/" + resultadosCuartos[k][0] + ".png");
                                 pNombresSemi[k].innerHTML = resultadosCuartos[k][1];
@@ -329,8 +333,8 @@ function iniciar(event){
                             // Creamos la nueva promesa para la semifinal
                             Promise.all([
 
-                                simulacionPartido(resultadosCuartos[0], resultadosCuartos[1], [marcadorNormal13, marcadorPenal13]),
-                                simulacionPartido(resultadosCuartos[2], resultadosCuartos[3], [marcadorNormal14, marcadorPenal14])
+                                simulacionPartido(resultadosCuartos[0], resultadosCuartos[1], [marcadorNormal13, marcadorPenal13], [imgSemi[0], imgSemi[1]]),
+                                simulacionPartido(resultadosCuartos[2], resultadosCuartos[3], [marcadorNormal14, marcadorPenal14], [imgSemi[2], imgSemi[3]])
 
                             ]).then(
                                 (resultados) => {
@@ -364,8 +368,8 @@ function iniciar(event){
                                     // Creamos la promesa que resuelve el 1er lugar y 3er lugar
                                     Promise.all([
 
-                                        simulacionPartido(resultadosSemis[0], resultadosSemis[1], [marcadorNormal15, marcadorPenal15]),
-                                        simulacionPartido(semifinalistas[0], semifinalistas[1], [marcadorNormal16, marcadorPenal16])
+                                        simulacionPartido(resultadosSemis[0], resultadosSemis[1], [marcadorNormal15, marcadorPenal15], [imgFinal[0], imgFinal[1]]),
+                                        simulacionPartido(semifinalistas[0], semifinalistas[1], [marcadorNormal16, marcadorPenal16], [img3erPuesto[0], img3erPuesto[1]])
 
                                     ]).then(
                                         (resultados) => {
@@ -380,11 +384,6 @@ function iniciar(event){
                                             segundoLugar = finalistas[0];
 
                                             abrirModal(ganador[0], segundoLugar[0], tercerLugar[0])
-                                            
-
-                                            console.log("El ganador es " + ganador[0]);
-                                            console.log("El segundo lugar es " + segundoLugar[0]);
-                                            console.log("El tercer lugar es " + tercerLugar[0]);
 
                                             // Terminamos la simulacion
                                             simulacionIniciada = false
@@ -409,11 +408,15 @@ function iniciar(event){
 }
 
 // Creamos una función que simula un partido entre dos equipos y devuelve una promesa
-function simulacionPartido(equipo1, equipo2, marcadores){
+function simulacionPartido(equipo1, equipo2, marcadores, imagenes){
     return new Promise( (resolve, reject) => {
         // Inicializamos los goles de cada equipo en cero
         var golesEquipo1 = 0;
         var golesEquipo2 = 0;
+
+        // Agregamos transiciones
+        imagenes[0].style.transition = "1000ms";
+        imagenes[1].style.transition = "1000ms";
 
         // Creamos una variable para contar las iteraciones
         var contador = 0;
@@ -441,23 +444,42 @@ function simulacionPartido(equipo1, equipo2, marcadores){
                         resolverEmpate(equipo1, equipo2, marcadores[1])
                     ]).then(
                         (resultado) => {
+                            // Vemos quien gano para resaltar las imagenes
+                            if(resultado[0] === equipo1){
+                                imagenes[0].style.border = "solid #30D5C8 5px";
+                                imagenes[1].style.opacity = "0.5";
+
+                            } else {
+                                imagenes[1].style.border = "solid #30D5C8 5px";
+                                imagenes[0].style.opacity = "0.5";
+
+                            }
+                            // Devolvemos el resultado ganador
                             resolve(resultado);
                         }
                     )
 
                 } else if (golesEquipo2 > golesEquipo1){
+                    // Aplicamos los estilos y devolvemos el resultado
+                    imagenes[1].style.border = "solid #30D5C8 5px";
+                    imagenes[0].style.opacity = "0.5";
                     resolve(equipo2);
 
                 } else {
+                    // Aplicamos los estilos y devolvemos el resultado
+                    imagenes[0].style.border = "solid #30D5C8 5px";
+                    imagenes[1].style.opacity = "0.5";
                     resolve(equipo1);
                 }
             }
+            // Aqui abajo esta el tiempo por cada gol en ms, 15000ms son 15s
         }, 15000);
     });
 }
 
 function resolverEmpate(equipo1, equipo2, marcador){
     return new Promise((resolve, reject) => {
+        // Inicializamos los goles y el contador
         var golesEquipo1 = 0;
         var golesEquipo2 = 0;
 
@@ -466,11 +488,13 @@ function resolverEmpate(equipo1, equipo2, marcador){
         // Inicializamos el marcador
         marcador.innerHTML = "(" + golesEquipo1.toString() + "-" + golesEquipo2.toString() + ")";
         
-
+        // Creamos el intervalo de ejecucion del codigo
         var intervalo = setInterval( () => {
-
+        
+        // Calculamos el gol
         var gol = marcadorGol()
-
+        
+        // Agregamos el gol a quien pertenezca y actualizamos el marcador
         if(gol[1] === 0){
             golesEquipo1 = golesEquipo1 +  gol[0];
             marcador.innerHTML = "(" + golesEquipo1.toString() + "-" + golesEquipo2.toString() + ")";
@@ -482,9 +506,11 @@ function resolverEmpate(equipo1, equipo2, marcador){
 
         // Condicion de detenida de la tanda de penales
         if(contador === 5){
+            // Creamos un segundo contador por empates de penales y limpiamos el primer intercalo
             let contador2 = 1
             clearInterval(intervalo);
 
+            // Si hay empate repetimos el proceso
             if(golesEquipo1 == golesEquipo2){
                     intervalo = setInterval(() => {
                         gol = marcadorGol()
@@ -499,14 +525,17 @@ function resolverEmpate(equipo1, equipo2, marcador){
 
                             if (contador2 > 2 && golesEquipo1 > golesEquipo2){
                                 clearInterval(intervalo);
-                                resolve (equipo1)
+                                resolve (equipo1);
                             } else if(contador2 > 2 && golesEquipo2 > golesEquipo1){
                                 clearInterval(intervalo);
-                                resolve(equipo2)
+                                resolve(equipo2);
                             }
                         contador2++
-                    }, 3000)
 
+                        // Aqui abajo esta el tiempo del intervalo 3s, como son 5 penales hacen 15s en total si no hay empate
+                    }, 3000)
+            
+            // Si no hay empate devolvemos el equipo ganador
             }else if(golesEquipo1 > golesEquipo2){
                 resolve(equipo1);
             } else {
@@ -563,9 +592,10 @@ function seleccionAleatoria(){
     }else if(pais == "italia"){
         return [pais, "&nbspITA"];
 
-    } else {
-        return [pais, pais.slice(0,3).toUpperCase()]
-    }
+    } 
+    
+    // En ninguno de esos casos se devuelve las 3 primeras letras del pais en mayusculas
+    return [pais, pais.slice(0,3).toUpperCase()]
 }
 
 function descomprimirResultados(resultados){
