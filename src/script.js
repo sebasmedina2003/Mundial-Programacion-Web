@@ -383,10 +383,11 @@ function iniciar(event){
                                             finalistas.splice(finalistas.indexOf(ganador), 1);
                                             segundoLugar = finalistas[0];
 
-                                            abrirModal(ganador[0], segundoLugar[0], tercerLugar[0])
+                                            // Esperamos 2 segundos para mostrar los resultados finales
+                                            setTimeout(abrirModal(ganador[0], segundoLugar[0], tercerLugar[0]), 2000);
 
                                             // Terminamos la simulacion
-                                            simulacionIniciada = false
+                                            simulacionIniciada = false;
                                         }
                                     )
                                 }
@@ -593,7 +594,7 @@ function seleccionAleatoria(){
         return [pais, "&nbspITA"];
 
     } 
-    
+
     // En ninguno de esos casos se devuelve las 3 primeras letras del pais en mayusculas
     return [pais, pais.slice(0,3).toUpperCase()]
 }
@@ -613,22 +614,22 @@ function descomprimirResultados(resultados){
 }
 
 function abrirModal(nombre_campeon, nombre_subcampeon, nombre_tercerLugar,){
-    document.querySelector(".campeon-modal").innerHTML = nombre_campeon.toUpperCase()
-    document.querySelector(".subcampeon-modal").innerHTML = nombre_subcampeon.toUpperCase()
-    document.querySelector(".tercerLugar-modal").innerHTML = nombre_tercerLugar.toUpperCase()
+    document.querySelector(".campeon-modal").innerHTML = nombre_campeon.toUpperCase();
+    document.querySelector(".subcampeon-modal").innerHTML = nombre_subcampeon.toUpperCase();
+    document.querySelector(".tercerLugar-modal").innerHTML = nombre_tercerLugar.toUpperCase();
 
 
-    let nombre_campeon1 = nombre_campeon.toLowerCase()
-    let nombre_subcampeon1 = nombre_subcampeon.toLowerCase()
-    let nombre_tercerLugar1 = nombre_tercerLugar.toLowerCase()
+    let nombre_campeon1 = nombre_campeon.toLowerCase();
+    let nombre_subcampeon1 = nombre_subcampeon.toLowerCase();
+    let nombre_tercerLugar1 = nombre_tercerLugar.toLowerCase();
 
     document.getElementsByClassName("pais-circular-llave-campeon")[0].src = "img/" + nombre_campeon1 + ".png";
     document.getElementsByClassName("pais-circular-llave-subcampeon")[0].src = "img/" + nombre_subcampeon1 + ".png";
     document.getElementsByClassName("pais-circular-llave-tercerLugar")[0].src = "img/" + nombre_tercerLugar1 + ".png";
 
-    let modal = document.querySelector(".modal-background")
+    let modal = document.querySelector(".modal-background");
     modal.style.display = "flex";
-    modal.style.animation = "aparecer 1s forwards"
+    modal.style.animation = "aparecer 1s forwards";
 
     var close = document.getElementById("close");
     var modal1 = document.getElementById("modal-background1");
