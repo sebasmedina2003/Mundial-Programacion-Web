@@ -1,339 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="script.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-
     <title>Simulador de Mundial</title>
-    <link rel="icon" href="img/icono.ico">
-
-</head>
-<body>
+    <link rel="icon" href="img/icono.ico" />
+  </head>
+  <body>
     <div class="modal-background" id="modal-background1">
-        <div class="modal">
-            <img class="pais-circular-llave-campeon margin-0" src="img/argentina.png" alt="">
-            <p class="margin-0 campeon-modal">Argentina</p>
-            <h1 class="amarillo margin-0">¡CAMPEÓN!</h1>
-                <div class="padding-2">
-                    <img class="pais-circular-llave-subcampeon" src="img/argentina.png" alt="">
-                    <p class="margin-0 subcampeon-modal">Argentina</p>
-                    <p class="plateado margin-0">Subcampeón</p>
-                </div>  
-                <div class="padding-2">
-                    <img class="pais-circular-llave-tercerLugar" src="img/argentina.png" alt="">
-                    <p class="margin-0 tercerLugar-modal">Argentina</p>
-                    <p class="marron margin-0">3er Lugar</p>
-                </div>
-            
-            <button class="btn-cerrar" id="close">Cerrar</button>
+      <div class="modal">
+        <img
+          class="pais-circular-llave-campeon margin-0"
+          src="img/argentina.png"
+          alt=""
+        />
+        <p class="margin-0 campeon-modal">Argentina</p>
+        <h1 class="amarillo margin-0">¡CAMPEÓN!</h1>
+        <div class="padding-2">
+          <img
+            class="pais-circular-llave-subcampeon"
+            src="img/argentina.png"
+            alt=""
+          />
+          <p class="margin-0 subcampeon-modal">Argentina</p>
+          <p class="plateado margin-0">Subcampeón</p>
         </div>
+        <div class="padding-2">
+          <img
+            class="pais-circular-llave-tercerLugar"
+            src="img/argentina.png"
+            alt=""
+          />
+          <p class="margin-0 tercerLugar-modal">Argentina</p>
+          <p class="marron margin-0">3er Lugar</p>
+        </div>
+
+        <button class="btn-cerrar" id="close">Cerrar</button>
+      </div>
     </div>
     <header class="top">
-        <h1>MUNDIAL VENEZUELA 2023</h1>
+      <h1>MUNDIAL VENEZUELA 2023</h1>
     </header>
 
     <section class="text-center">
-        <h2>¡Simulemos el resultado!</h2>
-        <p>Este es un sitio web donde podrás elegir 16 selecciones diferentes de 20 disponibles y hacer una simulación <br> resultados desde
-            Octavos de final hasta la gran final y ver el campeón de este Torneo
-        </p>
+      <h2>¡Simulemos el resultado!</h2>
+      <p>
+        Este es un sitio web donde podrás elegir 16 selecciones diferentes de 20
+        disponibles y hacer una simulación <br />
+        resultados desde Octavos de final hasta la gran final y ver el campeón
+        de este Torneo
+      </p>
     </section>
 
     <section class="Contenedor-botones">
-        <div class="flex">
-            <div class="margin-1">
-                <button class="img-contenedor" value="venezuela">
-                    <img src="img/venezuela.png" alt="imagen de la bandera de Venezuela">
-                </button>
-                <p class="margin-0">Venezuela</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="argentina">
-                    <img src="img/argentina.png" alt="imagen de la bandera de Argentina">
-                </button>
-                <p class="margin-0">Argentina</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="italia">
-                    <img src="img/italia.png" alt="imagen de la bandera de Italia">
-                </button>
-                <p class="margin-0">Italia</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="inglaterra">
-                    <img src="img/inglaterra.png" alt="imagen de la bandera de Inglaterra">
-                </button>
-                <p class="margin-0">Inglaterra</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="españa">
-                    <img src="img/españa.png" alt="imagen de la badnera de España">
-                </button>
-                <p class="margin-0">España</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="francia">
-                    <img src="img/francia.png" alt="imagen de la bandera de Francia">
-                </button>
-                <p class="margin-0">Francia</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="alemania">
-                    <img src="img/alemania.png" alt="imagen de la bandera de Alemania">
-                </button>
-                <p class="margin-0">Alemania</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="brasil">
-                    <img src="img/brasil2.png" alt="imagen de la bandera de Brasil">
-                </button>
-                <p class="margin-0">Brasil</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="portugal">
-                    <img src="img/portugal.png" alt="imagen de la bandera de Portugal">
-                </button>
-                <p class="margin-0">Portugal</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="corea">
-                    <img src="img/corea.png" alt="imagen de la bandera de Corea">
-                </button>
-                <p class="margin-0">Corea</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="usa">
-                    <img src="img/usa.png" alt="imagen de la bandera de USA">
-                </button>
-                <p class="margin-0">USA</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="marruecos">
-                    <img src="img/marruecos2.png" alt="imagen de la bandera de Marruecos">
-                </button>
-                <p class="margin-0">Marruecos</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="mexico">
-                    <img src="img/mexico2.png" alt="imagen de la bandera de Mexico">
-                </button>
-                <p class="margin-0">México</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="colombia">
-                    <img src="img/colombia.png" alt="imagen de la bandera de Colombia">
-                </button>
-                <p class="margin-0">Colombia</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="japon">
-                    <img src="img/japon.png" alt="imagen de la bandera de japon">
-                </button>
-                <p class="margin-0">Japón</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="rusia">
-                    <img src="img/rusia.png" alt="imagen de la bandera de rusia">
-                </button>
-                <p class="margin-0">Rusia</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="canada">
-                    <img src="img/canada.png" alt="imagen de la bandera de Canada">
-                </button>
-                <p class="margin-0">Canadá</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="nigeria">
-                    <img src="img/nigeria.png" alt="imagen de la bandera de Nigeria">
-                </button>
-                <p class="margin-0">Nigeria</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="senegal">
-                    <img src="img/senegal.png" alt="imagen de la bandera de Senegal">
-                </button>
-                <p class="margin-0">Senegal</p>
-            </div>
-            <div class="margin-1">
-                <button class="img-contenedor" value="croacia">
-                    <img src="img/croacia.png" alt="imagen de la bandera de croacia">
-                </button>
-                <p class="margin-0">Croacia</p>
-            </div>
+      <div class="flex">
+        <div class="margin-1">
+          <button class="img-contenedor" value="venezuela">
+            <img
+              src="img/venezuela.png"
+              alt="imagen de la bandera de Venezuela"
+            />
+          </button>
+          <p class="margin-0">Venezuela</p>
         </div>
-        <button class="btn" id="btnIniciar">¡Empecemos!</button>
+        <div class="margin-1">
+          <button class="img-contenedor" value="argentina">
+            <img
+              src="img/argentina.png"
+              alt="imagen de la bandera de Argentina"
+            />
+          </button>
+          <p class="margin-0">Argentina</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="italia">
+            <img src="img/italia.png" alt="imagen de la bandera de Italia" />
+          </button>
+          <p class="margin-0">Italia</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="inglaterra">
+            <img
+              src="img/inglaterra.png"
+              alt="imagen de la bandera de Inglaterra"
+            />
+          </button>
+          <p class="margin-0">Inglaterra</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="españa">
+            <img src="img/españa.png" alt="imagen de la badnera de España" />
+          </button>
+          <p class="margin-0">España</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="francia">
+            <img src="img/francia.png" alt="imagen de la bandera de Francia" />
+          </button>
+          <p class="margin-0">Francia</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="alemania">
+            <img
+              src="img/alemania.png"
+              alt="imagen de la bandera de Alemania"
+            />
+          </button>
+          <p class="margin-0">Alemania</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="brasil">
+            <img src="img/brasil2.png" alt="imagen de la bandera de Brasil" />
+          </button>
+          <p class="margin-0">Brasil</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="portugal">
+            <img
+              src="img/portugal.png"
+              alt="imagen de la bandera de Portugal"
+            />
+          </button>
+          <p class="margin-0">Portugal</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="corea">
+            <img src="img/corea.png" alt="imagen de la bandera de Corea" />
+          </button>
+          <p class="margin-0">Corea</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="usa">
+            <img src="img/usa.png" alt="imagen de la bandera de USA" />
+          </button>
+          <p class="margin-0">USA</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="marruecos">
+            <img
+              src="img/marruecos2.png"
+              alt="imagen de la bandera de Marruecos"
+            />
+          </button>
+          <p class="margin-0">Marruecos</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="mexico">
+            <img src="img/mexico2.png" alt="imagen de la bandera de Mexico" />
+          </button>
+          <p class="margin-0">México</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="colombia">
+            <img
+              src="img/colombia.png"
+              alt="imagen de la bandera de Colombia"
+            />
+          </button>
+          <p class="margin-0">Colombia</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="japon">
+            <img src="img/japon.png" alt="imagen de la bandera de japon" />
+          </button>
+          <p class="margin-0">Japón</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="rusia">
+            <img src="img/rusia.png" alt="imagen de la bandera de rusia" />
+          </button>
+          <p class="margin-0">Rusia</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="canada">
+            <img src="img/canada.png" alt="imagen de la bandera de Canada" />
+          </button>
+          <p class="margin-0">Canadá</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="nigeria">
+            <img src="img/nigeria.png" alt="imagen de la bandera de Nigeria" />
+          </button>
+          <p class="margin-0">Nigeria</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="senegal">
+            <img src="img/senegal.png" alt="imagen de la bandera de Senegal" />
+          </button>
+          <p class="margin-0">Senegal</p>
+        </div>
+        <div class="margin-1">
+          <button class="img-contenedor" value="croacia">
+            <img src="img/croacia.png" alt="imagen de la bandera de croacia" />
+          </button>
+          <p class="margin-0">Croacia</p>
+        </div>
+      </div>
+      <button class="btn" id="btnIniciar">¡Empecemos!</button>
     </section>
 
     <section class="llaves flex">
-        <div>
-            
-            <button class="btn-elegir-diferentes">Elegir selecciones diferentes</button>
+      <div>
+        <button class="btn-elegir-diferentes">
+          Elegir selecciones diferentes
+        </button>
 
-                             <!-- Octavos de final equipos -->
-            <div class="selectorOctavos">
-                <img class="pais-circular-llave octavos-pos-1" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-1"></p>
+        <!-- Octavos de final equipos -->
+        <div class="selectorOctavos">
+          <img
+            class="pais-circular-llave octavos-pos-1"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-1"></p>
 
-                <img class="pais-circular-llave octavos-pos-2" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-2"></p>
-                <p class="resultado-8-1_2 pGrande" id="marcadorNormal-8-1" ></p>
-                <p class="penales-8-1_2 pChica" id="marcadorPenales-8-1"></p>
-                
-                <img class="pais-circular-llave octavos-pos-3" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-3"></p>
-                
-                <img class="pais-circular-llave octavos-pos-4" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-4"></p>
-                <p class="resultado-8-3_4 pGrande" id="marcadorNormal-8-2"></p>
-                <p class="penales-8-3_4 pChica" id="marcadorPenales-8-2"></p>
-                
-                <img class="pais-circular-llave octavos-pos-5" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-5"></p>
-                
-                <img class="pais-circular-llave octavos-pos-6" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-6"></p>
-                <p class="resultado-8-5_6 pGrande" id="marcadorNormal-8-3"></p>
-                <p class="penales-8-5_6 pChica" id="marcadorPenales-8-3"></p>
-                
-                <img class="pais-circular-llave octavos-pos-7" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-7"></p>
-                
-                <img class="pais-circular-llave octavos-pos-8" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-8"></p>
-                <p class="resultado-8-7_8 pGrande" id="marcadorNormal-8-4"></p>
-                <p class="penales-8-7_8 pChica" id="marcadorPenales-8-4"></p>
-                
-                <img class="pais-circular-llave octavos-pos-9" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-9"></p>
-                
-                <img class="pais-circular-llave octavos-pos-10" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-10"></p>
-                <p class="resultado-8-9_10 pGrande" id="marcadorNormal-8-5"></p>
-                <p class="penales-8-9_10 pChica" id="marcadorPenales-8-5"></p>
-                
-                <img class="pais-circular-llave octavos-pos-11" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-11"></p>
-                
-                <img class="pais-circular-llave octavos-pos-12" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-12"></p>
-                <p class="resultado-8-11_12 pGrande" id="marcadorNormal-8-6"></p>
-                <p class="penales-8-11_12 pChica" id="marcadorPenales-8-6"></p>
-                
-                <img class="pais-circular-llave octavos-pos-13" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-13"></p>
-                
-                <img class="pais-circular-llave octavos-pos-14" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-14"></p>
-                <p class="resultado-8-13_14 pGrande" id="marcadorNormal-8-7"></p>
-                <p class="penales-8-13_14 pChica" id="marcadorPenales-8-7"></p>
-                
-                <img class="pais-circular-llave octavos-pos-15" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-15"></p>
-                
-                <img class="pais-circular-llave octavos-pos-16" src="img/fondo-blanco.png" alt="">
-                <p class="pos-8-16"></p>
-                <p class="resultado-8-15_16 pGrande" id="marcadorNormal-8-8"></p>
-                <p class="penales-8-15_16 pChica" id="marcadorPenales-8-8"></p>
-                
-            </div>
-                            
-                            <!-- Cuartos de final equipos -->
-            <div class="selectorCuartos">
-                <img class="pais-circular-llave cuartos-pos-1" src="img/fondo-blanco.png" alt="">
-                <p class="pos-4-1"></p>
+          <img
+            class="pais-circular-llave octavos-pos-2"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-2"></p>
+          <p class="resultado-8-1_2 pGrande" id="marcadorNormal-8-1"></p>
+          <p class="penales-8-1_2 pChica" id="marcadorPenales-8-1"></p>
 
-                <img class="pais-circular-llave cuartos-pos-2" src="img/fondo-blanco.png" alt="">
-                <p class="pos-4-2"></p>
-                <p class="resultado-4-1_2 pGrande" id="marcadorNormal-4-1"></p>
-                <p class="penales-4-1_2 pChica" id="marcadorNormal-4-1"></p>
+          <img
+            class="pais-circular-llave octavos-pos-3"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-3"></p>
 
-                <img class="pais-circular-llave cuartos-pos-3" src="img/fondo-blanco.png" alt="">
-                <p class="pos-4-3"></p>
+          <img
+            class="pais-circular-llave octavos-pos-4"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-4"></p>
+          <p class="resultado-8-3_4 pGrande" id="marcadorNormal-8-2"></p>
+          <p class="penales-8-3_4 pChica" id="marcadorPenales-8-2"></p>
 
-                <img class="pais-circular-llave cuartos-pos-4" src="img/fondo-blanco.png" alt="">
-                <p class="pos-4-4"></p>
-                <p class="resultado-4-3_4 pGrande"></p>
-                <p class="penales-4-3_4 pChica"></p>
+          <img
+            class="pais-circular-llave octavos-pos-5"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-5"></p>
 
-                <img class="pais-circular-llave cuartos-pos-5" src="img/fondo-blanco.png" alt="">
-                <p class="pos-4-5"></p>
+          <img
+            class="pais-circular-llave octavos-pos-6"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-6"></p>
+          <p class="resultado-8-5_6 pGrande" id="marcadorNormal-8-3"></p>
+          <p class="penales-8-5_6 pChica" id="marcadorPenales-8-3"></p>
 
-                <img class="pais-circular-llave cuartos-pos-6" src="img/fondo-blanco.png" alt="">
-                <p class="pos-4-6"></p>
-                <p class="resultado-4-5_6 pGrande"></p>
-                <p class="penales-4-5_6 pChica"></p>
+          <img
+            class="pais-circular-llave octavos-pos-7"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-7"></p>
 
-                <img class="pais-circular-llave cuartos-pos-7" src="img/fondo-blanco.png" alt="">
-                <p class="pos-4-7"></p>
+          <img
+            class="pais-circular-llave octavos-pos-8"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-8"></p>
+          <p class="resultado-8-7_8 pGrande" id="marcadorNormal-8-4"></p>
+          <p class="penales-8-7_8 pChica" id="marcadorPenales-8-4"></p>
 
-                <img class="pais-circular-llave cuartos-pos-8" src="img/fondo-blanco.png" alt="">
-                <p class="pos-4-8"></p>
-                <p class="resultado-4-7_8 pGrande"></p>
-                <p class="penales-4-7_8 pChica"></p>
+          <img
+            class="pais-circular-llave octavos-pos-9"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-9"></p>
 
-            </div>
+          <img
+            class="pais-circular-llave octavos-pos-10"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-10"></p>
+          <p class="resultado-8-9_10 pGrande" id="marcadorNormal-8-5"></p>
+          <p class="penales-8-9_10 pChica" id="marcadorPenales-8-5"></p>
 
-                            <!-- Semifinal de final equipos -->
-            <div class="selectorSemi">
-                <img class="pais-circular-llave semis-pos-1" src="img/fondo-blanco.png" alt="">
-                <p class="pos-semis-1"></p>
-                
+          <img
+            class="pais-circular-llave octavos-pos-11"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-11"></p>
 
-                <img class="pais-circular-llave semis-pos-2" src="img/fondo-blanco.png" alt="">
-                <p class="pos-semis-2"></p>
-                <p class="resultado-semis-1_2 pGrande"></p>
-                <p class="penales-semis-1_2 pChica"></p>
+          <img
+            class="pais-circular-llave octavos-pos-12"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-12"></p>
+          <p class="resultado-8-11_12 pGrande" id="marcadorNormal-8-6"></p>
+          <p class="penales-8-11_12 pChica" id="marcadorPenales-8-6"></p>
 
+          <img
+            class="pais-circular-llave octavos-pos-13"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-13"></p>
 
+          <img
+            class="pais-circular-llave octavos-pos-14"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-14"></p>
+          <p class="resultado-8-13_14 pGrande" id="marcadorNormal-8-7"></p>
+          <p class="penales-8-13_14 pChica" id="marcadorPenales-8-7"></p>
 
-                <img class="pais-circular-llave semis-pos-3" src="img/fondo-blanco.png" alt="">
-                <p class="pos-semis-3"></p>
+          <img
+            class="pais-circular-llave octavos-pos-15"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-15"></p>
 
-                <img class="pais-circular-llave semis-pos-4" src="img/fondo-blanco.png" alt="">
-                <p class="pos-semis-4"></p>
-                <p class="resultado-semis-3_4 pGrande"></p>
-                <p class="penales-semis-3_4 pChica"></p>
-
-            </div>
-
-                              <!-- 3er puesto equipos -->
-            <div class="selector3erPuesto">
-                <img class="pais-circular-llave tercer-puesto-pos-1" src="img/fondo-blanco.png" alt="">
-                <p class="pos-3-1"></p>
-
-                <img class="pais-circular-llave tercer-puesto-pos-2" src="img/fondo-blanco.png" alt="">
-                <p class="pos-3-2"></p>
-                <p class="resultado-3-1_2 pGrande"></p>
-                <p class="penales-3-1_2 pChica"></p>
-            </div>
-
-
-                            <!-- Final de final equipos -->
-            <div class="selectorFinal">
-                <img class="pais-circular-llave final-pos-1" src="img/fondo-blanco.png" alt="">
-                <p class="pos-final-1"></p>
-                <img class="pais-circular-llave final-pos-2" src="img/fondo-blanco.png" alt="">
-                <p class="pos-final-2"></p>
-                <p class="resultado-final-1_2 pGrande"></p>
-                <p class="penales-final-1_2 pChica"></p>
-            </div>
-
-            <p class="vinotinto">FINAL</p>
+          <img
+            class="pais-circular-llave octavos-pos-16"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-8-16"></p>
+          <p class="resultado-8-15_16 pGrande" id="marcadorNormal-8-8"></p>
+          <p class="penales-8-15_16 pChica" id="marcadorPenales-8-8"></p>
         </div>
-    </section>
 
-    
-</body>
+        <!-- Cuartos de final equipos -->
+        <div class="selectorCuartos">
+          <img
+            class="pais-circular-llave cuartos-pos-1"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-4-1"></p>
+
+          <img
+            class="pais-circular-llave cuartos-pos-2"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-4-2"></p>
+          <p class="resultado-4-1_2 pGrande" id="marcadorNormal-4-1"></p>
+          <p class="penales-4-1_2 pChica" id="marcadorNormal-4-1"></p>
+
+          <img
+            class="pais-circular-llave cuartos-pos-3"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-4-3"></p>
+
+          <img
+            class="pais-circular-llave cuartos-pos-4"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-4-4"></p>
+          <p class="resultado-4-3_4 pGrande"></p>
+          <p class="penales-4-3_4 pChica"></p>
+
+          <img
+            class="pais-circular-llave cuartos-pos-5"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-4-5"></p>
+
+          <img
+            class="pais-circular-llave cuartos-pos-6"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-4-6"></p>
+          <p class="resultado-4-5_6 pGrande"></p>
+          <p class="penales-4-5_6 pChica"></p>
+
+          <img
+            class="pais-circular-llave cuartos-pos-7"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-4-7"></p>
+
+          <img
+            class="pais-circular-llave cuartos-pos-8"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-4-8"></p>
+          <p class="resultado-4-7_8 pGrande"></p>
+          <p class="penales-4-7_8 pChica"></p>
+        </div>
+
+        <!-- Semifinal de final equipos -->
+        <div class="selectorSemi">
+          <img
+            class="pais-circular-llave semis-pos-1"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-semis-1"></p>
+
+          <img
+            class="pais-circular-llave semis-pos-2"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-semis-2"></p>
+          <p class="resultado-semis-1_2 pGrande"></p>
+          <p class="penales-semis-1_2 pChica"></p>
+
+          <img
+            class="pais-circular-llave semis-pos-3"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-semis-3"></p>
+
+          <img
+            class="pais-circular-llave semis-pos-4"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-semis-4"></p>
+          <p class="resultado-semis-3_4 pGrande"></p>
+          <p class="penales-semis-3_4 pChica"></p>
+        </div>
+
+        <!-- 3er puesto equipos -->
+        <div class="selector3erPuesto">
+          <img
+            class="pais-circular-llave tercer-puesto-pos-1"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-3-1"></p>
+
+          <img
+            class="pais-circular-llave tercer-puesto-pos-2"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-3-2"></p>
+          <p class="resultado-3-1_2 pGrande"></p>
+          <p class="penales-3-1_2 pChica"></p>
+        </div>
+
+        <!-- Final de final equipos -->
+        <div class="selectorFinal">
+          <img
+            class="pais-circular-llave final-pos-1"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-final-1"></p>
+          <img
+            class="pais-circular-llave final-pos-2"
+            src="img/fondo-blanco.png"
+            alt=""
+          />
+          <p class="pos-final-2"></p>
+          <p class="resultado-final-1_2 pGrande"></p>
+          <p class="penales-final-1_2 pChica"></p>
+        </div>
+
+        <p class="vinotinto">FINAL</p>
+      </div>
+    </section>
+  </body>
 </html>
